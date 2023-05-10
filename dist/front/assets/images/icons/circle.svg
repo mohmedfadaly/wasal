@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 320 320" style="enable-background:new 0 0 320 320;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+	.st2{fill:url(#SVGID_3_);}
+	.st3{fill:url(#SVGID_4_);}
+	.st4{display:none;fill:none;}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="467.3793" y1="344.3917" x2="-378.7216" y2="-161.7324" gradientTransform="matrix(1 0 0 -1 0 320)">
+	<stop  offset="0" style="stop-color:#4AD7CF"/>
+	<stop  offset="1" style="stop-color:#344892"/>
+</linearGradient>
+<path class="st0" d="M257.3,287c31.9-24.5,53.5-60.1,60.4-99.7c6.9-39.7-1.5-80.4-23.3-114.2C272.4,39.3,238.6,15,199.6,5
+	S119.3,0.1,83.9,19.2L91,32.3c32.1-17.4,69.6-22,105-12.9s66,31.1,85.9,61.7c19.8,30.6,27.4,67.6,21.2,103.6
+	c-6.2,36-25.8,68.3-54.8,90.5L257.3,287z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="451.171" y1="330.5137" x2="-348.8929" y2="-141.8293" gradientTransform="matrix(1 0 0 -1 0 320)">
+	<stop  offset="0" style="stop-color:#4AD7CF"/>
+	<stop  offset="1" style="stop-color:#344892"/>
+</linearGradient>
+<path class="st1" d="M68.7,39.8c-30.2,23.4-50.5,57.6-56.9,95.6c-6.3,38,1.8,77,22.7,109.2c20.9,32.2,53.1,55.1,90.1,64.1
+	c37,9.1,75.9,3.6,109.1-15.3l-1-1.8c-32.7,18.7-71.1,24.1-107.6,15.1c-36.5-8.9-68.2-31.5-88.9-63.3
+	c-20.7-31.7-28.7-70.2-22.4-107.7c6.2-37.5,26.3-71.2,56.1-94.3L68.7,39.8z"/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="20.2355" y1="16.8935" x2="-16.4647" y2="-4.7736" gradientTransform="matrix(1 0 0 1 63.502 30.1707)">
+	<stop  offset="0" style="stop-color:#4AD7CF"/>
+	<stop  offset="1" style="stop-color:#344892"/>
+</linearGradient>
+<ellipse class="st2" cx="70.4" cy="39.2" rx="6.9" ry="7"/>
+<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="20.2355" y1="16.8935" x2="-16.4647" y2="-4.7736" gradientTransform="matrix(1 0 0 1 227.547 280.19)">
+	<stop  offset="0" style="stop-color:#4AD7CF"/>
+	<stop  offset="1" style="stop-color:#344892"/>
+</linearGradient>
+<ellipse class="st3" cx="234.4" cy="289.2" rx="6.9" ry="7"/>
+<ellipse class="st4" cx="160" cy="160.7" rx="119.7" ry="121.2"/>
+</svg>
