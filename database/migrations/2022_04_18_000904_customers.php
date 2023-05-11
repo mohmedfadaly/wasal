@@ -15,23 +15,18 @@ class Customers extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name_f')->nullable();
-            $table->string('name_l')->nullable();
+            $table->string('name')->unique();
+            $table->string('degree')->nullable();
+            $table->string('phone')->nullable();
             $table->string('email')->unique()->nullable();
             $table->string('password')->nullable();
             $table->string('avatar')->default('default.png');
-            $table->enum('active',['0','1'])->default('1');
-            $table->float('wallet')->default(0);
-            $table->string('google_id')->nullable();
-            $table->integer('code')->nullable();
-            $table->string('api_token', 80)->unique()->nullable();
-            $table->string('device_token')->nullable();
-            $table->longText('web_fcm_token')->nullable();
-            $table->longText('app_fcm_token')->nullable();
-            $table->unsignedBigInteger('city_id')->nullable();
-            $table->foreign('city_id')->references('id')->on('cities')->onDelete('cascade');
-            $table->unsignedBigInteger('country_id')->nullable();
-            $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
+            $table->enum('active',['0','1'])->default('0');
+            $table->string('spaci')->nullable();
+            $table->string('area')->nullable();
+            $table->string('city')->nullable();
+            $table->string('job_name')->nullable();
+            $table->longText('place_work')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

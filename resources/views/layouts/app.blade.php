@@ -80,6 +80,9 @@
     color: #000;
     background: {{ auth()->user()->nav_color }};
   }
+  :not(.layout-fixed) .main-sidebar {
+    bottom: 55px;
+}
   </style>
   @yield('style')
 </head>
@@ -101,7 +104,7 @@
       {{-- {{NavbarMenu()}} --}}
       
       {{-- <li class="nav-item d-none d-sm-inline-block">
-        <img src="{{asset('dist/front/assets/images/logo/logo.svg')}}" style="width: 38px;border-radius: 52px;">
+        <img src="{{asset('dist/front/assets/images/logo/Group.png')}}" style="width: 38px;border-radius: 52px;">
       </li> --}}
     </ul>
 
@@ -111,9 +114,9 @@
         <!--<strong>{{ __('messages.Choose_Language') }} </strong>-->
         
           <select class="changeLang" style=" background: rgba(250, 250, 250, 0.0);border:none">
-            <option value="ar" {{ session()->get('locale') == 'ar' ? 'selected' : '' }}>🇪🇬&emsp;  </option>
+            <option value="ar" {{ session()->get('locale') == 'ar' ? 'selected' : '' }}>🇪🇬&emsp;عربي</option>
 
-            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}> 🇬🇧&emsp;</option>
+            <option value="en" {{ session()->get('locale') == 'en' ? 'selected' : '' }}> 🇬🇧&emsp;English</option>
             
         </select>
     </li>

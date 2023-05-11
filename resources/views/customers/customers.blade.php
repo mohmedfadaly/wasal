@@ -1,50 +1,7 @@
 @extends('layouts.app')
 @section('style')
 <style type="text/css">
-.switch-field {
-	display: flex;
-	margin-bottom: 36px;
-	overflow: hidden;
-}
 
-.switch-field input {
-	position: absolute !important;
-	clip: rect(0, 0, 0, 0);
-	height: 1px;
-	width: 1px;
-	border: 0;
-	overflow: hidden;
-}
-
-.switch-field label {
-	background-color: #e4e4e4;
-	color: rgba(0, 0, 0, 0.6);
-	font-size: 14px;
-	line-height: 1;
-	text-align: center;
-	padding: 8px 16px;
-	margin-right: -1px;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
-	transition: all 0.1s ease-in-out;
-}
-
-.switch-field label:hover {
-	cursor: pointer;
-}
-
-.switch-field input:checked + label {
-	background-color: #a5dc86;
-	box-shadow: none;
-}
-
-.switch-field label:first-of-type {
-	border-radius: 4px 0 0 4px;
-}
-
-.switch-field label:last-of-type {
-	border-radius: 0 4px 4px 0;
-}
 </style>
 @endsection
 @section('content')
@@ -52,7 +9,11 @@
 		<div class="col-sm-12">
           <div class="card card-primary card-outline">
              <div class="card-header">
-              <h5 class="m-0" style="display: inline;">قائمة المشتريين</h5>
+              <h5 class="m-0" style="display: inline;">قائمة الأطباء</h5>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modaldemo9" style="float: left;">
+                إضافة طبيب جديد
+                     <i class="fas fa-plus"></i>
+                </button>
             </div>  
             <!-- /.card-header -->
             <div class="card-body">
@@ -72,7 +33,7 @@
 	                  <td>{{$key+1}}</td>
 	                  
 	                  <td><img alt="Avatar" class="table-avatar" src="{{asset('uploads/customers/avatar/'.$value->avatar)}}" style="border-radius: 50px;width:50px;"></td>
-                    <td>{{$value->name_f}} {{$value->name_l}}</td>
+                    <td>{{$value->name}}</td>
                     	      
 	                  <td>@if($value->active == 1)<span class=" badge badge-success">نشط</span>@else<span class=" badge badge-danger">حظر</span>@endif</td>
                     </td>
@@ -87,6 +48,34 @@
             </div>
             {{csrf_field()}}
             <!-- /.card-body -->
+            {{-- add doctors modal --}}
+            <div class="modal" id="modaldemo9">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content modal-content-demo">
+                    <div class="modal-header">
+                        <h6 class="modal-title">اضافة طبيب</h6><button aria-label="Close" class="close" data-dismiss="modal"
+                            type="button"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body">
+                    <form action="{{route('storecustomers')}}" method="post" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            <label>إسم الطبيب </label> <span class="text-danger">*</span>
+                            <input type="text" name="name" class="form-control" placeholder="إسم الطبيب  " required="" style="margin-bottom: 10px">
+                            <label> صورة الطبيب </label> <span class="text-primary">*</span>
+                            <input type="file" name="avatar" accept="image/*"  class="form-control" placeholder="   "  style="margin-bottom: 10px">
+                            <label >كلمة المرور : <span class="text-danger">*</span></label>
+							              <input type="text" name="password" class="form-control" value="{{old('password')}}" placeholder="كلمة المرور" required="">
+						
+                            <button type="submit" id="submit1" style="display: none;"></button>
+                    </form>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-primary save1">حفظ</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">إغلاق</button>
+                    </div>
+                </div>
+                </div>
+            </div>
           </div>
 		</div>
 	</div>
@@ -94,26 +83,9 @@
 
 @section('script')
 <script type="text/javascript">
-    // switch
-$(document).on('click','.state', function(){
 
-var data = {
-id    : $(this).data('id'),
-state    : $(this).data('state'),
-_token        : $("input[name='_token']").val()
-}
-
-
-    $.ajax({
-    url     : "{{ route('updatecustomerstatus') }}",
-    method  : 'post',
-    data    : data,
-    success : function(s,result){
-  
-            toastr.success('تم حفظ التعديلات بنجاح')
-
-    }});
-
-});
+$('.save1').on('click',function(){
+        $('#submit1').click();
+    })
 </script>
 @endsection

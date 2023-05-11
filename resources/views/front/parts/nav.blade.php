@@ -4,7 +4,7 @@
             <!-- LOGO -->
             <div class="col-md-2">
                 <div class="site_logo">
-                    <img src="{{asset('dist/front/assets/images/logo/logo.svg')}}" alt="Logo" />
+                    <img src="{{asset('dist/front/assets/images/logo/Group.png')}}" alt="Logo" />
                 </div>
             </div>
             <!-- MENU -->
@@ -72,7 +72,7 @@
     <!-- START:: HEADER MOBILE -->
     <div class="mobile_header">
         <div class="logo_mobile">
-            <img src="{{asset('dist/front/assets/images/logo/logo.svg')}}" width="" height="" alt="">
+            <img src="{{asset('dist/front/assets/images/logo/Group.png')}}" width="" height="" alt="">
         </div>
         <div class="btn_menu">
             <button type="button" class="toggleClassBtn">

@@ -65,7 +65,7 @@
                 <div class="row">
                     <div class="col-md-5">
                         <div class="right-footer">
-                            <img src="{{asset('dist/front/assets/images/logo/logo.svg') }}" alt="" width="" height="" />
+                            <img src="{{asset('dist/front/assets/images/logo/Group.png') }}" alt="" width="" height="" />
                             <p>
                                 يضم جميع المسوقين العرب وويقدم جميع الخدمات في مجال التسويق
                             </p>

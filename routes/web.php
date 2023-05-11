@@ -37,78 +37,56 @@ Route::group(['middleware' => ['role','auth'],'prefix'=>'admin'], function() {
 		'sort'=> 5,
 		'icon' =>'<i class="fas fa-user text-main"></i>',
 		'subIcon' =>'<i class="fas fa-user"></i>',
-		'title'=>'المشتريين',
-		'title_en' =>'customers',
-		'subTitle_en' =>'customers',
-		'subTitle'=>'المشتريين',
+		'title'=>'الأطباء',
+		'title_en' =>'doctors',
+		'subTitle_en' =>'doctors',
+		'subTitle'=>'الأطباء',
 		'q_a'=>true,
 		'child'=>[
 			'editcustomers',
 			'deletecustomers',
 			'updatecustomers',
 			'storecustomers',
-			'addcustomers',
-			'updatecustomerstatus'
 		]
 	]);
 
-	# add customers
-	Route::get('add-customers',[
-		'uses'=>'CustomersController@add',
-		'icon' =>'<i class="fas fa-plus"></i>',
-		'as'  =>'addcustomers',
-		'sort'=> 5,
-		'title_en' =>'add customers',
-		'title'=>'اضافة مشتري',
-		'hasFather'=>true,
-		'q_a'=>true
-	]);
 
 	# store customers
 	Route::post('store-customers',[
 		'uses'=>'CustomersController@store',
 		'as'  =>'storecustomers',
 		'sort'=> 5,
-		'title_en' =>'store customers',
-		'title'=>'انشاء مشتري'
+		'title_en' =>'store doctors',
+		'title'=>'انشاء طبيب'
 	]);
 
 	# edit customers
 	Route::get('edit-customers/{id}',[
 		'uses'=>'CustomersController@Edit',
 		'as'  =>'editcustomers',
-		'title_en' =>'edit customers',
+		'title_en' =>'edit doctors',
 		'sort'=> 5,
-		'title'=>'تعديل مشتري'
+		'title'=>'تعديل طبيب'
 	]);
 
 	# update customers
 	Route::post('update-customers',[
 		'uses'=>'CustomersController@Update',
 		'as'  =>'updatecustomers',
-		'title_en' =>'update customers',
+		'title_en' =>'update doctors',
 		'sort'=> 5,
-		'title'=>'تحديث مشتري'
+		'title'=>'تحديث طبيب'
 	]);
 
 	# delete customers
 	Route::get('delete-customers/{id}',[
 		'uses'=>'CustomersController@Delete',
 		'as'  =>'deletecustomers',
-		'title_en' =>'delete customers',
+		'title_en' =>'delete doctors',
 		'sort'=> 5,
-		'title'=>'حذف مشتري'
+		'title'=>'حذف طبيب'
 	]);
 
-
-	# update customers
-	Route::post('update-customers-status',[
-		'uses'=>'CustomersController@status',
-		'as'  =>'updatecustomerstatus',
-		'title_en' =>'update customers',
-		'sort'=> 5,
-		'title'=>'تحديث حالة مشتري '
-	]);
 
 	#------------------------------- end of CustomersController -----------------------------#
 
@@ -186,252 +164,208 @@ Route::group(['middleware' => ['role','auth'],'prefix'=>'admin'], function() {
 
 	#------------------------------- end of SupervisorsController -----------------------------#
 
-	// #------------------------------- start of BankController -----------------------------#
+	
+	#------------------------------- start of SlidersController -----------------------------#
 
-	# banks
-	// Route::get('banks',[
-	// 	'uses' =>'BankController@Index',
-	// 	'as'   =>'banks',
+	// # sliders
+	// Route::get('sliders',[
+	// 	'uses' =>'SlidersController@Index',
+	// 	'as'   =>'sliders',
+	// 	'title'=>'الإسلايدر',
+	// 	'subTitle'=>'الإسلايدر',
+	// 	'title_en' =>'sliders',
+	// 	'subTitle_en' =>'sliders',
 	// 	'sort'=> 1,
-	// 	'title'=>'الحسابات البنكية',
-	// 	'subTitle'=>'الحسابات البنكية',
-	// 	'icon' =>'<i class="fas fa-building text-main"></i>',
-	// 	'subIcon' =>'<i class="fas fa-building"></i>',
-	// 	'q_a'=>true,
+	// 	'icon' =>'<i class="fas fa-images text-main"></i>',
+	// 	'subIcon' =>'<i class="fas fa-images"></i>',
 	// 	'child'=>[
-	// 		'storebank',
-	// 		'updatebank',
-	// 		'deletebank',
+	// 		'storeslider',
+	// 		'updateslider',
+	// 		'deleteslider',
 	// 	]
 	// ]);
 
-	// # store bank
-	// Route::post('store-bank',[
-	// 	'uses'=>'BankController@Store',
-	// 	'as'  =>'storebank',
+	// # store slider
+	// Route::post('store-slider',[
+	// 	'uses'=>'SlidersController@Store',
+	// 	'as'  =>'storeslider',
+	// 	'title_en' =>'store slider',
 	// 	'sort'=> 1,
-	// 	'title'=>'إضافة بنك '
+	// 	'title'=>'إضافة صورة سلايدر'
 	// ]);
 
-	// # update bank
-	// Route::post('update-bank',[
-	// 	'uses'=>'BankController@Update',
-	// 	'as'  =>'updatebank',
+	// # update services
+	// Route::post('update-slider',[
+	// 	'uses'=>'SlidersController@Update',
+	// 	'as'  =>'updateslider',
+	// 	'title_en' =>'update slider',
 	// 	'sort'=> 1,
-	// 	'title'=>'تحديث بنك '
+	// 	'title'=>'تحديث صورة إسلايدر'
 	// ]);
 
-	// # delete bank
-	// Route::get('delete-bank/{id}',[
-	// 	'uses'=>'BankController@Delete',
-	// 	'as'  =>'deletebank',
+	// # delete slider
+	// Route::get('delete-slider/{id}',[
+	// 	'uses'=>'SlidersController@Delete',
+	// 	'as'  =>'deleteslider',
+	// 	'title_en' =>'delete slider',
 	// 	'sort'=> 1,
-	// 	'title'=>'حذف بنك '
+	// 	'title'=>'حذف صورة إسلايدر'
 	// ]);
 
-	#------------------------------- end of BankController -----------------------------#
-
-	#------------------------------- start of SlidersController -----------------------------#
-
-	# sliders
-	Route::get('sliders',[
-		'uses' =>'SlidersController@Index',
-		'as'   =>'sliders',
-		'title'=>'الإسلايدر',
-		'subTitle'=>'الإسلايدر',
-		'title_en' =>'sliders',
-		'subTitle_en' =>'sliders',
-		'sort'=> 1,
-		'icon' =>'<i class="fas fa-images text-main"></i>',
-		'subIcon' =>'<i class="fas fa-images"></i>',
-		'child'=>[
-			'storeslider',
-			'updateslider',
-			'deleteslider',
-		]
-	]);
-
-	# store slider
-	Route::post('store-slider',[
-		'uses'=>'SlidersController@Store',
-		'as'  =>'storeslider',
-		'title_en' =>'store slider',
-		'sort'=> 1,
-		'title'=>'إضافة صورة سلايدر'
-	]);
-
-	# update services
-	Route::post('update-slider',[
-		'uses'=>'SlidersController@Update',
-		'as'  =>'updateslider',
-		'title_en' =>'update slider',
-		'sort'=> 1,
-		'title'=>'تحديث صورة إسلايدر'
-	]);
-
-	# delete slider
-	Route::get('delete-slider/{id}',[
-		'uses'=>'SlidersController@Delete',
-		'as'  =>'deleteslider',
-		'title_en' =>'delete slider',
-		'sort'=> 1,
-		'title'=>'حذف صورة إسلايدر'
-	]);
-
-	// #------------------------------- end of SlidersController -----------------------------#
+	// // #------------------------------- end of SlidersController -----------------------------#
 
 
-	// #------------------------------- start of PartnersController -----------------------------#
+	// // #------------------------------- start of PartnersController -----------------------------#
 
-	# partners
-	Route::get('partners',[
-		'uses' =>'PartnersController@Index',
-		'as'   =>'partners',
-		'title'=>'الشركاء',
-		'subTitle'=>'الشركاء',
-		'title_en' =>'partners',
-		'subTitle_en' =>'partners',
-		'sort'=> 1,
-		'icon' =>'<i class="fas fa-handshake text-main"></i>',
-		'subIcon' =>'<i class="fas fa-handshake"></i>',
-		'child'=>[
-			'storepartner',
-			'updatepartner',
-			'deletepartner',
-		]
-	]);
+	// # partners
+	// Route::get('partners',[
+	// 	'uses' =>'PartnersController@Index',
+	// 	'as'   =>'partners',
+	// 	'title'=>'الشركاء',
+	// 	'subTitle'=>'الشركاء',
+	// 	'title_en' =>'partners',
+	// 	'subTitle_en' =>'partners',
+	// 	'sort'=> 1,
+	// 	'icon' =>'<i class="fas fa-handshake text-main"></i>',
+	// 	'subIcon' =>'<i class="fas fa-handshake"></i>',
+	// 	'child'=>[
+	// 		'storepartner',
+	// 		'updatepartner',
+	// 		'deletepartner',
+	// 	]
+	// ]);
 
-	# store partner
-	Route::post('store-partner',[
-		'uses'=>'PartnersController@Store',
-		'as'  =>'storepartner',
-		'sort'=> 1,
-		'title_en' =>'store partner',
-		'title'=>'إضافة شريك'
-	]);
+	// # store partner
+	// Route::post('store-partner',[
+	// 	'uses'=>'PartnersController@Store',
+	// 	'as'  =>'storepartner',
+	// 	'sort'=> 1,
+	// 	'title_en' =>'store partner',
+	// 	'title'=>'إضافة شريك'
+	// ]);
 
-	# update partner
-	Route::post('update-partner',[
-		'uses'=>'PartnersController@Update',
-		'as'  =>'updatepartner',
-		'title_en' =>'update partner',
-		'sort'=> 1,
-		'title'=>'تحديث شريك'
-	]);
+	// # update partner
+	// Route::post('update-partner',[
+	// 	'uses'=>'PartnersController@Update',
+	// 	'as'  =>'updatepartner',
+	// 	'title_en' =>'update partner',
+	// 	'sort'=> 1,
+	// 	'title'=>'تحديث شريك'
+	// ]);
 
-	# delete partner
-	Route::get('delete-partner/{id}',[
-		'uses'=>'PartnersController@Delete',
-		'as'  =>'deletepartner',
-		'title_en' =>'delete partner',
-		'sort'=> 1,
-		'title'=>'حذف شريك'
-	]);
+	// # delete partner
+	// Route::get('delete-partner/{id}',[
+	// 	'uses'=>'PartnersController@Delete',
+	// 	'as'  =>'deletepartner',
+	// 	'title_en' =>'delete partner',
+	// 	'sort'=> 1,
+	// 	'title'=>'حذف شريك'
+	// ]);
 
-	// #------------------------------- end of PartnersController -----------------------------#
-
-
-	// #------------------------------- start of PolicyController -----------------------------#
+	// // #------------------------------- end of PartnersController -----------------------------#
 
 
-	# customer policy
-	Route::get('customer-policy',[
-		'uses' =>'PolicyController@CustomerPolicy',
-		'as'   =>'customerpolicy',
-		'sort'=> 10,
-		'title'=>'الشروط والأحكام',
-		'subTitle'=>' المستخدمين',
-		'title_en' =>'customer policy',
-		'subTitle_en' =>'customer policy',
-		'icon' =>'<i class="fas fa-balance-scale text-main"></i>',
-		'subIcon' =>'<i class="fas fa-address-book"></i>',
-		'child'=>[
-			'updatecustomerpolicy',
-			'providerpolicy',
-			'updateproviderpolicy',
-		]
-	]);
-
-	# update customer policy
-	Route::post('update-customer-policy',[
-		'uses' =>'PolicyController@UpdateCustomerPolicy',
-		'as'   =>'updatecustomerpolicy',
-		'sort'=> 10,
-		'title_en' =>'update customer policy',
-		'title'=>'تحديث المستخدمين',
-	]);
-
-	# provider policy
-	Route::get('provider-policy',[
-		'uses' =>'PolicyController@ProviderPolicy',
-		'as'   =>'providerpolicy',
-		'title'=>' المسوقيين',
-		'sort'=> 10,
-		'title_en' =>'provider policy',
-		'icon' =>'<i class="fas fa-user-edit"></i>',
-		'hasFather'=>true
-	]);
-
-	# update provider policy
-	Route::post('update-provider-policy',[
-		'uses' =>'PolicyController@UpdateProviderPolicy',
-		'as'   =>'updateproviderpolicy',
-		'title_en' =>'update provider policy',
-		'sort'=> 10,
-		'title'=>'  تحديث المسوقيين',
-	]);
-
-	#------------------------------- end of PolicyController -----------------------------#
+	// // #------------------------------- start of PolicyController -----------------------------#
 
 
-	#------------------------------- start of QuestionController -----------------------------#
+	// # customer policy
+	// Route::get('customer-policy',[
+	// 	'uses' =>'PolicyController@CustomerPolicy',
+	// 	'as'   =>'customerpolicy',
+	// 	'sort'=> 10,
+	// 	'title'=>'الشروط والأحكام',
+	// 	'subTitle'=>' المستخدمين',
+	// 	'title_en' =>'customer policy',
+	// 	'subTitle_en' =>'customer policy',
+	// 	'icon' =>'<i class="fas fa-balance-scale text-main"></i>',
+	// 	'subIcon' =>'<i class="fas fa-address-book"></i>',
+	// 	'child'=>[
+	// 		'updatecustomerpolicy',
+	// 		'providerpolicy',
+	// 		'updateproviderpolicy',
+	// 	]
+	// ]);
 
-	# common questions
-	Route::get('common-questions',[
-		'uses' =>'QuestionController@Index',
-		'as'   =>'commonquestions',
-		'title'=>'الأسئلة الشائعة',
-		'subTitle'=>'الأسئلة الشائعة',
-		'title_en' =>'common questions',
-		'subTitle_en' =>'common questions',
-		'sort'=> 1,
-		'icon' =>'<i class="fas fa-question-circle text-main"></i>',
-		'subIcon' =>'<i class="fas fa-question-circle"></i>',
-		'child'=>[
-			'storequestions',
-			'updatequestions',
-			'deletequestions',
-		]
-	]);
+	// # update customer policy
+	// Route::post('update-customer-policy',[
+	// 	'uses' =>'PolicyController@UpdateCustomerPolicy',
+	// 	'as'   =>'updatecustomerpolicy',
+	// 	'sort'=> 10,
+	// 	'title_en' =>'update customer policy',
+	// 	'title'=>'تحديث المستخدمين',
+	// ]);
 
-	# store questions
-	Route::post('store-questions',[
-		'uses' =>'QuestionController@Store',
-		'as'   =>'storequestions',
-		'title_en' =>'store questions',
-		'sort'=> 1,
-		'title'=>'حفظ سؤال',
-	]);
+	// # provider policy
+	// Route::get('provider-policy',[
+	// 	'uses' =>'PolicyController@ProviderPolicy',
+	// 	'as'   =>'providerpolicy',
+	// 	'title'=>' المسوقيين',
+	// 	'sort'=> 10,
+	// 	'title_en' =>'provider policy',
+	// 	'icon' =>'<i class="fas fa-user-edit"></i>',
+	// 	'hasFather'=>true
+	// ]);
 
-	# update questions
-	Route::post('update-questions',[
-		'uses' =>'QuestionController@Update',
-		'as'   =>'updatequestions',
-		'title_en' =>'update questions',
-		'sort'=> 1,
-		'title'=>'تحديث سؤال',
-	]);
+	// # update provider policy
+	// Route::post('update-provider-policy',[
+	// 	'uses' =>'PolicyController@UpdateProviderPolicy',
+	// 	'as'   =>'updateproviderpolicy',
+	// 	'title_en' =>'update provider policy',
+	// 	'sort'=> 10,
+	// 	'title'=>'  تحديث المسوقيين',
+	// ]);
 
-	# delete questions
-	Route::get('delete-questions/{id}',[
-		'uses' =>'QuestionController@Delete',
-		'as'   =>'deletequestions',
-		'title_en' =>'delete questions',
-		'sort'=> 1,
-		'title'=>'حذف سؤال',
-	]);
+	// #------------------------------- end of PolicyController -----------------------------#
 
-	#------------------------------- end of QuestionController -----------------------------#
+
+	// #------------------------------- start of QuestionController -----------------------------#
+
+	// # common questions
+	// Route::get('common-questions',[
+	// 	'uses' =>'QuestionController@Index',
+	// 	'as'   =>'commonquestions',
+	// 	'title'=>'الأسئلة الشائعة',
+	// 	'subTitle'=>'الأسئلة الشائعة',
+	// 	'title_en' =>'common questions',
+	// 	'subTitle_en' =>'common questions',
+	// 	'sort'=> 1,
+	// 	'icon' =>'<i class="fas fa-question-circle text-main"></i>',
+	// 	'subIcon' =>'<i class="fas fa-question-circle"></i>',
+	// 	'child'=>[
+	// 		'storequestions',
+	// 		'updatequestions',
+	// 		'deletequestions',
+	// 	]
+	// ]);
+
+	// # store questions
+	// Route::post('store-questions',[
+	// 	'uses' =>'QuestionController@Store',
+	// 	'as'   =>'storequestions',
+	// 	'title_en' =>'store questions',
+	// 	'sort'=> 1,
+	// 	'title'=>'حفظ سؤال',
+	// ]);
+
+	// # update questions
+	// Route::post('update-questions',[
+	// 	'uses' =>'QuestionController@Update',
+	// 	'as'   =>'updatequestions',
+	// 	'title_en' =>'update questions',
+	// 	'sort'=> 1,
+	// 	'title'=>'تحديث سؤال',
+	// ]);
+
+	// # delete questions
+	// Route::get('delete-questions/{id}',[
+	// 	'uses' =>'QuestionController@Delete',
+	// 	'as'   =>'deletequestions',
+	// 	'title_en' =>'delete questions',
+	// 	'sort'=> 1,
+	// 	'title'=>'حذف سؤال',
+	// ]);
+
+	// #------------------------------- end of QuestionController -----------------------------#
 
 
 	#------------------------------- start of PermissionsController -----------------------------#
@@ -558,48 +492,48 @@ Route::group(['middleware' => ['role','auth'],'prefix'=>'admin'], function() {
 	
 	#------------------------------- start of PagesController -----------------------------#
 
-	# pages
-	Route::get('pages',[
-		'uses' =>'PagesController@Index',
-		'as'   =>'pages',
-		'title'=>'الصفحات',
-		'subTitle'=>'الصفحات',
-		'title_en' =>'pages',
-		'subTitle_en' =>'pages',
-		'icon' =>'<i class="fas fa-pager text-main"></i>',
-		'subIcon' =>'<i class="fas fa-pager"></i>',
-		'child'=>[
-			'storepage',
-			'updatepage',
-			'deletepage',
-		]
-	]);
+	// # pages
+	// Route::get('pages',[
+	// 	'uses' =>'PagesController@Index',
+	// 	'as'   =>'pages',
+	// 	'title'=>'الصفحات',
+	// 	'subTitle'=>'الصفحات',
+	// 	'title_en' =>'pages',
+	// 	'subTitle_en' =>'pages',
+	// 	'icon' =>'<i class="fas fa-pager text-main"></i>',
+	// 	'subIcon' =>'<i class="fas fa-pager"></i>',
+	// 	'child'=>[
+	// 		'storepage',
+	// 		'updatepage',
+	// 		'deletepage',
+	// 	]
+	// ]);
 
 	
 
-	# store page
-	Route::post('store-page',[
-		'uses' =>'PagesController@Store',
-		'as'   =>'storepage',
-		'title_en' =>'store pages',
-		'title'=>'حفظ صفحة',
-	]);
+	// # store page
+	// Route::post('store-page',[
+	// 	'uses' =>'PagesController@Store',
+	// 	'as'   =>'storepage',
+	// 	'title_en' =>'store pages',
+	// 	'title'=>'حفظ صفحة',
+	// ]);
 
-	# update page
-	Route::post('update-page',[
-		'uses' =>'PagesController@Update',
-		'as'   =>'updatepage',
-		'title_en' =>'update pages',
-		'title'=>'تحديث صفحة',
-	]);
+	// # update page
+	// Route::post('update-page',[
+	// 	'uses' =>'PagesController@Update',
+	// 	'as'   =>'updatepage',
+	// 	'title_en' =>'update pages',
+	// 	'title'=>'تحديث صفحة',
+	// ]);
 
-	# delete page
-	Route::get('delete-page/{id}',[
-		'uses' =>'PagesController@delete',
-		'as'   =>'deletepage',
-		'title_en' =>'delete pages',
-		'title'=>'حذف صفحة',
-	]);
+	// # delete page
+	// Route::get('delete-page/{id}',[
+	// 	'uses' =>'PagesController@delete',
+	// 	'as'   =>'deletepage',
+	// 	'title_en' =>'delete pages',
+	// 	'title'=>'حذف صفحة',
+	// ]);
 
 
 	#------------------------------- end of PagesController -----------------------------#

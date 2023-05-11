@@ -52,7 +52,7 @@
                     <!-- LOGO -->
                     <div class="col-md-2">
                         <div class="site_logo">
-                            <img src="{{asset('dist/front/assets/images/logo/logo.svg')}}" alt="Logo" />
+                            <img src="{{asset('dist/front/assets/images/logo/Group.png')}}" alt="Logo" />
                         </div>
                     </div>
                     <div class="col-md-2">

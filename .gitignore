@@ -24,20 +24,3 @@ yarn-error.log
 Modules/Translation/lang/*
 .php_cs.cache
 
-/uploads/customers/*
-/uploads/customers/avatar/*
-/uploads/videos/*
-/uploads/sections/*
-/uploads/providers/avatar/*
-/uploads/articles/*
-/uploads/podcasts/*
-/uploads/services/*
-/uploads/tickets/*
-/uploads/users/avatar/*
-/uploads/posts/*
-/uploads/posts/avatar/*
-/uploads/chanals/avatar/*
-/uploads/chanals/*
-/uploads/society/*
-/uploads/society/posts/*
-/uploads/app_images/*

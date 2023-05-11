@@ -25,7 +25,7 @@
       font-family: 'Tajawal', sans-serif;
     }
     body{
-      background-image: url("{{asset('dist/img/back11.jpeg')}}");
+      background-image: url("{{asset('dist/img/back11.jpg')}}");
       background-repeat: round;
     }
   </style>
@@ -40,7 +40,7 @@
   border-radius: 41px;">
     {{-- <span>لوحة التحكم</span> --}}
     <br>
-    <img src="{{asset('dist/front/assets/images/logo/logo.svg')}}" style="width: 176px;position: relative;bottom: 46px;">
+    <img src="{{asset('dist/front/assets/images/logo/Group.png')}}" style="width: 120px;position: relative;bottom: 46px;">
   </div>
   <!-- /.login-logo -->
   <div class="card" style="border-radius: 30px">
