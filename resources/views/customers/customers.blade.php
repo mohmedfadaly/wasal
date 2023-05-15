@@ -38,7 +38,7 @@
 	                  <td>@if($value->active == 1)<span class=" badge badge-success">نشط</span>@else<span class=" badge badge-danger">حظر</span>@endif</td>
                     </td>
 	                  <td>
-                      <a href="{{route('editcustomers',$value->id)}}" class="btn btn-primary btn-sm " type="submit"> <i class="fas fa-edit"></i></a>
+                      <!-- <a href="{{route('editcustomers',$value->id)}}" class="btn btn-primary btn-sm " type="submit"> <i class="fas fa-edit"></i></a> -->
                      <a href="{{route('deletecustomers',$value->id)}}" class="btn btn-danger btn-sm delete"> <i class="fas fa-trash"></i></a>
 	                  </td>
 	                </tr>

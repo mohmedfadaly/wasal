@@ -16,7 +16,7 @@ class RedirectIfNotCustomer
      */
     public function handle($request, Closure $next, $guard = 'customer') {
         if (!Auth::guard($guard)->check()) {
-            return redirect('change-type-account');
+            return redirect('login-account');
         }
         return $next($request);
     }

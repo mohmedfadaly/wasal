@@ -1,32 +1,53 @@
+ <!--breadcrumb-->
+ <nav aria-label="breadcrumb mt-5 mb-5">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{url('/')}}">الرئيسية</a></li>
+          <li class="breadcrumb-item active" aria-current="page">لوحة التحكم</li>
+        </ol>
+      </div>
+    </nav>
 
-<!-- START:: SLIDER HERO SECTION -->
-<section class="hero_section hero_section_auth">
-    <div class="content_hero_section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6">
-                    <h1>أكبر سوق عربي لبيع وشراء الخدمات المصغرة</h1>
-                    <p>أنجز أعمالك بسهولة وأمان</p>
-                    <form action="{{ route('search_services') }}" method="post" enctype="multipart/form-data">
-                        {{csrf_field()}}
-                        <div class="custom-form-group">
-                            <input type="search" name="search" required class="form-control" id="subscription"
-                                placeholder="ابحث عن خدمتك">
-                            <button type="submit" class="btn-animation-1"><i class="fas fa-search"></i></button>
-                        </div>
-                    </form>
+    <!--user_dashboard-->
+    <div class="user-dashboard-details">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <a class="dashboard-card d-block">
+              <div class="dashboard-card-details">
+                <div class="dashboard-img">
+                  <img src="{{asset('dist/front/assets/images/new-file 1.png')}}" alt="" />
                 </div>
-            </div>
+                <div class="dashboard-title">
+                  <h5>فتح ملف جديد</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="dashboard-card d-block">
+              <div class="dashboard-card-details">
+                <div class="dashboard-img">
+                  <img src="{{asset('dist/front/assets/images/file 1.png')}}" alt="" />
+                </div>
+                <div class="dashboard-title">
+                  <h5>ملفات المرضى</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-4">
+            <a class="dashboard-card d-block">
+              <div class="dashboard-card-details">
+                <div class="dashboard-img">
+                  <img src="{{asset('dist/front/assets/images/statistical-graphic 1.png')}}" alt="" />
+                </div>
+                <div class="dashboard-title">
+                  <h5>الإحصائيات</h5>
+                </div>
+              </div>
+            </a>
+          </div>
         </div>
+      </div>
     </div>
-
-</section>
-@include('front.parts_auth.services')
-@include('front.parts_auth.articls')
-@include('front.parts_auth.consult')
-@include('front.parts_auth.store')
-@include('front.parts_auth.bodcasts')
-@include('front.parts_auth.society')
-@include('front.parts_auth.videos')
-
-<!-- END:: SLIDER HERO SECTION -->
