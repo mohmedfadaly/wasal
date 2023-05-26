@@ -13,7 +13,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <a class="dashboard-card d-block">
+            <a class="dashboard-card d-block" href="{{ route('add_kid') }}">
               <div class="dashboard-card-details">
                 <div class="dashboard-img">
                   <img src="{{asset('dist/front/assets/images/new-file 1.png')}}" alt="" />
