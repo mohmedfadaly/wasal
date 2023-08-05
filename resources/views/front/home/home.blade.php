@@ -1,5 +1,14 @@
+ <!--breadcrumb-->
+ <nav aria-label="breadcrumb mt-5 mb-5">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{url('/')}}">الرئيسية</a></li>
+          <li class="breadcrumb-item active" aria-current="page">لوحة التحكم</li>
+        </ol>
+      </div>
+    </nav>
 
- 
+
  <!--breadcrumb-->
  <nav aria-label="breadcrumb mt-5 mb-5">
       <div class="container">

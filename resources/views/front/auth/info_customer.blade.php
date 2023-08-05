@@ -78,10 +78,10 @@
                   />
                 </div>
                 <div class="form-group">
-    
-             
+
+
                    <label>الدرجة العلمية</label>
-       
+
                   <select class="form-control"  name="degree" required>
                     <option value="select"> أدخل الدرجة العلمية...</option>
                          <option  value="Master" @if(auth()->guard('customer')->user()->degree == 'Master') selected @endif>
@@ -90,7 +90,7 @@
                           <option  value="doctor" @if(auth()->guard('customer')->user()->degree == 'doctor') selected @endif>
                             دكتوراه
                           </option>
-                 </select>    
+                 </select>
                 </div>
                 <div class="form-group">
                   <label>التخصص</label>
@@ -148,7 +148,7 @@
                     placeholder="أدخل المدينة..."
                   />
                 </div>
-               
+
 
                 <div class="form-group">
                   <label style="width: 35%"> الشهادات والدورات</label>
@@ -174,6 +174,6 @@
     </div>
 
     <!--footer-->
-    
+
 
 @endsection

@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
     <title>Edit Kid</title>
+=======
+    <title>family form</title>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -13,10 +17,16 @@
       referrerpolicy="0-referrer"
     />
     <link
+<<<<<<< HEAD
       href="{{asset('dist/front/assets/css/select2.min.css')}}"
       rel="stylesheet"
     />
    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+=======
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
     <link rel="stylesheet" href="{{asset('dist/front/assets/css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('dist/front/assets/css/style.css')}}" />
     <link rel="stylesheet" href="{{asset('dist/front/assets/css/family-form.css')}}" />
@@ -24,6 +34,7 @@
         .tab-form {
         margin-top: 50px;
     }
+<<<<<<< HEAD
    
         .form-date {
     position: relative;
@@ -31,12 +42,17 @@
       #comment{
         visibility :hidden;
     }
+=======
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
 
       </style>
 
   </head>
   <body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
     <!--header-->
     @include('front.parts_auth.nav')
     @if(auth()->guard('customer')->check())
@@ -89,13 +105,20 @@
                         <label>الاسم كاملاً </label>
                         <input
                           type="text"
+<<<<<<< HEAD
                           class="form-control child-name"
+=======
+                          class="form-control"
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                           placeholder="أدخل اسم كاملاً..."
                           name="name"
                           value="{{$Kid->name}}"
                           required
                         />
+<<<<<<< HEAD
                         <div class="error">يجب ألا يقل أسم الطفل عن 20 حرف</div>
+=======
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                       </div>
                       <div class="form-group">
                         <label>رقم الهوية</label>
@@ -108,6 +131,7 @@
                           required
                         />
                       </div>
+<<<<<<< HEAD
                       <div class="form-group  form-date" style="position:relative">
                         <label> تاريخ الميلاد</label>
                     
@@ -123,6 +147,18 @@
                           required
                         />
                     <img src="{{asset('dist/front/assets/images/calender.png')}}" class="datepickerimg" width="20px" alt="">
+=======
+                      <div class="form-group">
+                        <label> تاريخ الميلاد</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          placeholder="أدخل تاريخ الميلاد..."
+                          name="date"
+                          value="{{$Kid->date}}"
+                          required
+                        />
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                       </div>
                       <div class="form-group">
                         <label>مكان الميلاد</label>
@@ -142,10 +178,17 @@
                           <option value="0"  @if($Kid->kind == '0') selected @endif>أنثي</option>
                         </select>
                       </div>
+<<<<<<< HEAD
                       <div class="form-group" style="position:relative;">
                         <label>الجنسية</label>
                         <select name="country_id" class="form-control js-example-basic-single country">
                           <option  selected>...اختر الجنسية</option>
+=======
+                      <div class="form-group">
+                        <label>الجنسية</label>
+                        <select name="country_id" class="form-control js-example-basic-single country">
+                          <option disabled selected>...اختر الجنسية</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
 							@foreach($countries as $value)
 								<option value="{{$value->id}}" @if($Kid->country_id == $value->id) selected @endif>{{$value->name_ar}}</option>
 							@endforeach
@@ -161,7 +204,11 @@
                           value="{{$Kid->area}}"
                         />
                       </div>
+<<<<<<< HEAD
                       <div class="form-group" style="position:relative;">
+=======
+                      <div class="form-group">
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                         <label>المدينة </label>
                         <select name="city_id" class="form-control cities js-example-basic-single" required>
 
@@ -374,7 +421,11 @@
                         </div>
                       </div>
                     </div>
+<<<<<<< HEAD
                     <button class="btn w-50 m-auto d-block save-data">حفظ البيانات</button>
+=======
+                    <button class="btn w-50 m-auto d-block">حفظ البيانات</button>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                   </div>
                   <div id="menu1" class="container tab-pane fade">
                     <br />
@@ -406,6 +457,7 @@
                           value="{{$Kid->Dad->num}}"
                         />
                       </div>
+<<<<<<< HEAD
                       <div class="form-group form-date" style="position:relative">
                         <label> تاريخ الميلاد</label>
                     
@@ -420,12 +472,28 @@
                         />
                     <img src="{{asset('dist/front/assets/images/calender.png')}}" class="datepickerimg" width="20px" alt="">
                         
+=======
+                      <div class="form-group">
+                        <label> تاريخ الميلاد</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          placeholder="أدخل تاريخ الميلاد..."
+                          name="dad_date"
+                          value="{{$Kid->Dad->date}}"
+
+                        />
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                       </div>
 
                       <div class="form-group">
                         <label>الحالة الاجتماعية</label>
                         <select name="dad_marital_status"  class="form-control">
+<<<<<<< HEAD
                           <option value="" >اختر الحالة الاجتماعية...</option>
+=======
+                          <option value="" disabled>اختر الحالة الاجتماعية...</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                           <option value="married" @if($Kid->Dad->marital_status == 'married') selected @endif>
                             متزوج
                           </option>
@@ -449,7 +517,11 @@
                       <div class="form-group">
                         <label>المستوى التعليمي</label>
                         <select name="dad_learning" class="form-control">
+<<<<<<< HEAD
                           <option >اختر المستوى التعليمي...</option>
+=======
+                          <option disabled>اختر المستوى التعليمي...</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                           <option value="none" @if($Kid->Dad->learning == 'none') selected @endif>أمّي</option>
                           <option  value="primary" @if($Kid->Dad->learning == 'primary') selected @endif>
                             ابتدائي
@@ -473,7 +545,11 @@
                       <div class="form-group">
                         <label> طبيعة العمل</label>
                         <select class="form-control">
+<<<<<<< HEAD
                           <option name="dad_work"  >اختر طبيعة العمل...</option>
+=======
+                          <option name="dad_work"  disabled>اختر طبيعة العمل...</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                           <option value="public_work" @if($Kid->Dad->work == 'public_work') selected @endif>
                             موظف حكومي
                           </option>
@@ -794,7 +870,10 @@
                           name="mom_name"
                           value="{{$Kid->Mom->name}}"
                           />
+<<<<<<< HEAD
                           
+=======
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                       </div>
                       <div class="form-group">
                         <label>رقم الهوية</label>
@@ -807,6 +886,7 @@
 
                         />
                       </div>
+<<<<<<< HEAD
                       <div class="form-group form-date" style="position:relative">
                         <label> تاريخ الميلاد</label>
                     
@@ -821,12 +901,28 @@ value="{{$Kid->Mom->date}}"
                         />
                     <img src="{{asset('dist/front/assets/images/calender.png')}}" class="datepickerimg" width="20px" alt="">
                         
+=======
+                      <div class="form-group">
+                        <label> تاريخ الميلاد</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          placeholder="أدخل تاريخ الميلاد..."
+                          name="mom_date"
+                          value="{{$Kid->Mom->date}}"
+
+                        />
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                       </div>
 
                       <div class="form-group">
                         <label>الحالة الاجتماعية</label>
                         <select name="mom_marital_status"  class="form-control">
+<<<<<<< HEAD
                             <option value="" >اختر الحالة الاجتماعية...</option>
+=======
+                            <option value="" disabled>اختر الحالة الاجتماعية...</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                             <option value="married" @if($Kid->Mom->marital_status == 'married') selected @endif>
                               متزوج
                             </option>
@@ -852,7 +948,11 @@ value="{{$Kid->Mom->date}}"
                       <div class="form-group">
                         <label>المستوى التعليمي</label>
                         <select name="mom_learning" class="form-control">
+<<<<<<< HEAD
                             <option >اختر المستوى التعليمي...</option>
+=======
+                            <option disabled>اختر المستوى التعليمي...</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                           <option value="none" @if($Kid->Mom->learning == 'none') selected @endif>أمّي</option>
                           <option  value="primary" @if($Kid->Mom->learning == 'primary') selected @endif>
                             ابتدائي
@@ -876,7 +976,11 @@ value="{{$Kid->Mom->date}}"
                       <div class="form-group">
                         <label> طبيعة العمل</label>
                         <select name="mom_work" class="form-control">
+<<<<<<< HEAD
                             <option name="dad_work"  >اختر طبيعة العمل...</option>
+=======
+                            <option name="dad_work"  disabled>اختر طبيعة العمل...</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                             <option value="public_work" @if($Kid->Mom->work == 'public_work') selected @endif>
                               موظف حكومي
                             </option>
@@ -1502,7 +1606,11 @@ value="{{$Kid->Mom->date}}"
                         <div class="form-group family-data">
                           <label>عدد أفراد الاسره</label>
                           <select name="family_num_of"  class="form-control" name="" id="">
+<<<<<<< HEAD
                             <option >اختر عدد أفراد الأسرة...</option>
+=======
+                            <option disabled>اختر عدد أفراد الأسرة...</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                             <option value="1" @if($Kid->Family->num_of == '1') selected @endif>1</option>
                             <option value="2" @if($Kid->Family->num_of == '2') selected @endif>2</option>
                             <option value="3" @if($Kid->Family->num_of == '3') selected @endif>3</option>
@@ -1518,7 +1626,11 @@ value="{{$Kid->Mom->date}}"
                         <div class="form-group family-data">
                           <label>عدد الأشقاء الذكور</label>
                           <select name="family_num_of_pro" class="form-control" name="" id="">
+<<<<<<< HEAD
                             <option >اختر عدد الأشقاء الذكور...</option>
+=======
+                            <option disabled>اختر عدد الأشقاء الذكور...</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                             <option value="1" @if($Kid->Family->num_of_pro == '1') selected @endif>1</option>
                             <option value="2" @if($Kid->Family->num_of_pro == '2') selected @endif>2</option>
                             <option value="3" @if($Kid->Family->num_of_pro == '3') selected @endif>3</option>
@@ -1534,7 +1646,11 @@ value="{{$Kid->Mom->date}}"
                         <div class="form-group family-data">
                           <label>عدد الأشقاء الاناث </label>
                           <select name="family_num_of_sis" class="form-control" name="" id="">
+<<<<<<< HEAD
                             <option >اختر عدد الأشقاء الاناث...</option>
+=======
+                            <option disabled>اختر عدد الأشقاء الاناث...</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                             <option value="1" @if($Kid->Family->num_of_sis == '1') selected @endif>1</option>
                             <option value="2" @if($Kid->Family->num_of_sis == '2') selected @endif>2</option>
                             <option value="3" @if($Kid->Family->num_of_sis == '3') selected @endif>3</option>
@@ -1551,7 +1667,11 @@ value="{{$Kid->Mom->date}}"
                         <div class="form-group family-data">
                           <label>ترتيب الطفل بين أشقاءه </label>
                           <select name="family_sort_of"  class="form-control" name="" id="">
+<<<<<<< HEAD
                             <option >اختر ترتيب الطفل بين أشقاءه...</option>
+=======
+                            <option disabled>اختر ترتيب الطفل بين أشقاءه...</option>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                             <option value="1" @if($Kid->Family->sort_of == '1') selected @endif>1</option>
                             <option value="2" @if($Kid->Family->sort_of == '2') selected @endif>2</option>
                             <option value="3" @if($Kid->Family->sort_of == '3') selected @endif>3</option>
@@ -1606,9 +1726,14 @@ value="{{$Kid->Mom->date}}"
                             <option
 
                               value="mum_dad_togther"
+<<<<<<< HEAD
                               @if($Kid->Family->marital_status == 'mum_dad_togther') selected 
                             >
                             @endif
+=======
+                              @if($Kid->Family->marital_status == 'mum_dad_togther') selected @endif
+                            >
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
                               الوالدان على علاقتهما الزوجية
                             </option>
                             <option
@@ -1706,6 +1831,7 @@ value="{{$Kid->Mom->date}}"
     <script src="{{asset('dist/front/assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('dist/front/assets/js/jquery-3.6.3.js')}}"></script>
     <script src="{{asset('dist/front/assets/js/app.js')}}"></script>
+<<<<<<< HEAD
     <script src="{{asset('dist/front/assets/js/select2.min.js')}}"></script>
     <script>
      $(document).ready(function () {
@@ -1740,6 +1866,9 @@ value="{{$Kid->Mom->date}}"
     
 });
     </script>
+=======
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
     <script>
       $(document).ready(function () {
         $(".js-example-basic-single").select2();
@@ -1808,6 +1937,7 @@ _token        : $("input[name='_token']").val()
 });
 
     </script>
+<<<<<<< HEAD
 
     <script src="{{asset('vendor\realrashid\sweet-alert\resources\js\sweetalert.all.js')}}"></script>
     @include('sweetalert::alert')
@@ -1853,5 +1983,12 @@ _token        : $("input[name='_token']").val()
       }
 }
         </script>
+=======
+    <script>
+      let commentTabs = document.querySelectorAll(".comment-tab");
+      commentTab.forEach();
+
+    </script>
+>>>>>>> 3c3a9ff3dc9f924796fc9b89f76c4890e7093452
   </body>
 </html>

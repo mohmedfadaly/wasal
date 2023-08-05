@@ -9,7 +9,7 @@
         <div class="loader">
 
           <img src=  "{{asset('dist/front/assets/images/headerlogo.png')}}" alt="">
-        
+
           <br>
           <img src="{{asset('dist/front/assets/images/Group 1000003788.png')}}" class="mt-md-5 mt-3 mb-1" width="90px">
 
@@ -76,10 +76,10 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4">
-    
-            
+
+
               <div class="flip-card">
-            
+
                 <div class="aims-card  flip-card-back">
                   <div class="aims-img">
                     <img src="{{asset('dist/front/assets/images/solution (2) 1.png')}}"alt="" />
@@ -87,7 +87,7 @@
                   <div class="aim-title">
                     <h4>أهدافنا</h4>
                   </div>
-            
+
                  </div>
                <div class="aims-card  flip-card-front">
                 <div class="aims-img">
@@ -104,7 +104,7 @@
                   </p>
                 </div>
                </div>
-           
+
             </div>
           </div>
           <div class="col-md-4">
@@ -116,9 +116,9 @@
                 <div class="aim-title">
                   <h4>رسالتنا</h4>
                 </div>
-          
+
                </div>
-               
+
                <div class="aims-card  flip-card-front   scaled-colored-front">
                 <div class="aims-img">
                   <img src="{{asset('dist/front/assets/images/solution (1) 1.png')}}" alt="" />
@@ -133,12 +133,12 @@
                   </p>
                 </div>
                </div>
-              
+
             </div>
           </div>
           <div class="col-md-4">
              <div class="flip-card">
-            
+
                 <div class="aims-card  flip-card-back">
                   <div class="aims-img">
                     <img src="{{asset('dist/front/assets/images/strategic-vision (1) 1.png')}}" alt="" />
@@ -146,7 +146,7 @@
                   <div class="aim-title">
                     <h4>رؤيتنا</h4>
                   </div>
-            
+
                  </div>
                <div class="aims-card  flip-card-front">
                 <div class="aims-img">
@@ -156,7 +156,7 @@
                   <h4>رؤيتنا</h4>
                 </div>
                 <div class="aim-text">
-                  <p>تتمثل رؤيتنا في تقديم منظومة 
+                  <p>تتمثل رؤيتنا في تقديم منظومة
                     إلكترونية متكاملة تتيح للأخصائيين ومحللين السلوك التطبيقي
                      جميع الخدمات التي تسهم في تطوير الحالات التي تعاني من
                      اضطراب طيف التوحد والاضطرابات النمائية الاخرى
@@ -164,7 +164,7 @@
                   </p>
                 </div>
                </div>
-           
+
             </div>
           </div>
         </div>

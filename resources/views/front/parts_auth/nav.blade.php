@@ -14,13 +14,13 @@
               <div class="close-icon" id="close-menu">
                 <p><i class="fa-solid fa-xmark"></i></p>
               </div>
-              
+
                 <a class="data" href="{{ route('info_profile') }}"><i class="fa-regular fa-file-lines"></i> البيانات الشخصيه</a>
 
-                
-                
+
+
                   <a class="exit" href="{{ route('acuant_Logout') }}"> <i class="fa-solid fa-arrow-up-right-from-square"></i> تسجيل خروج  </a>
-                
+
             </ul>
           </div>
           <div class="col-3 header-logo mob-header-logo">
@@ -32,11 +32,11 @@
 
                 <a  class="data" href="{{ route('info_profile') }}"><i class="fa-regular fa-file-lines"></i> البيانات الشخصيه</a>
 
-                
+
 
                   <a class="exit" href="{{ route('acuant_Logout') }}"><i class="fa-solid fa-arrow-up-right-from-square"></i> تسجيل خروج </a>
-                
-               
+
+
               </div>
               <div class="user-img">
                 <img src="{{asset('uploads/customers/avatar/'.auth()->guard('customer')->user()->avatar)}}" alt="" />

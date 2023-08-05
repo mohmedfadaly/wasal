@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group">
                   <label>الدرجة العلمية</label>
-       
+
                   <select class="form-control" name="degree" required>
                     <option > أدخل الدرجة العلمية...</option>
                   <option value="institute">معهد</option>
@@ -55,7 +55,7 @@
                   <option  value="Master">ماجستير</option>
                   <option  value="doctor"> دكتوراه</option>
                   <option value="prof">  بروفيسور</option>
-                 </select>    
+                 </select>
                 </div>
                 <div class="form-group">
                   <label>التخصص</label>
@@ -114,22 +114,22 @@
                 </div>
                 <div class="form-group">
                   <label> الشهادات والدورات</label>
-            
+
                    <div class="pdf-img d-flex">
-                     
+
                    <input type="file"   type="file"
                     name="file"
-               
+
                     hidden
                     class="form-control"
                       placeholder="أضف الشهادات والدورات"
                    />
                     <p>أدخل الشهادات والدورات</p>
-                 
+
                     <a  class="pdf-link">
                       <img src="{{asset('dist/front/assets/images/pdf 1.png')}}" alt="" />
                     </a>
-                  
+
                   </div>
                 </div>
                 <button type="submit" class="btn mt-5 w-50 m-auto">حفظ</button>

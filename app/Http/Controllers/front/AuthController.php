@@ -28,10 +28,10 @@ class AuthController extends Controller
     public function __construct()
     {
         View::share([
-           
+
         ]);
     }
-    
+
     # login
     public function login(Request $request)
     {
@@ -52,7 +52,7 @@ class AuthController extends Controller
             Alert::warning('هناك خطأ','بياناتك خاطئه ');
             return back();
             }
-            
+
 
         }else{
             Alert::warning('هناك خطأ','بياناتك خاطئه ');
@@ -65,10 +65,10 @@ class AuthController extends Controller
     {
         $this->validate($request,[
             'name'          => 'required|min:10|max:50|unique:customers,name,'.Auth::guard('customer')->user()->id,
-    
+
             'email'          => 'required|unique:customers,email,'.Auth::guard('customer')->user()->id,
 
-        
+
         ]);
 
         $data = Customer::where('id',Auth::guard('customer')->user()->id)->first();
@@ -86,7 +86,7 @@ class AuthController extends Controller
 
         if ($request->hasFile('file')) {
             $file = $request->file('file');
- 
+
             $namev =date('d-m-y').time().rand().'.'.$file->getClientOriginalExtension();
             $destinationPath = 'uploads/files';
             $file->move($destinationPath, $namev);
@@ -99,7 +99,7 @@ class AuthController extends Controller
         Alert::success('عملية ناجحة','تم الحفظ');
         return back();
     }
-    
+
     # info
     public function info(Request $request)
     {
@@ -113,7 +113,7 @@ class AuthController extends Controller
             'name'          => 'required|min:10|max:50|unique:customers,name,'.Auth::guard('customer')->user()->id,
             'email'          => 'required|unique:customers,email,'.Auth::guard('customer')->user()->id,
 
-        
+
         ]);
 
         $data = Customer::where('id',Auth::guard('customer')->user()->id)->first();

@@ -34,7 +34,6 @@
 
   </head>
   <body>
- 
     <!--header-->
     @include('front.parts_auth.nav')
     @if(auth()->guard('customer')->check())
@@ -94,13 +93,11 @@
                         <label>الاسم كاملاً </label>
                         <input
                           type="text"
-                          class="form-control child-name"
+                          class="form-control"
                           placeholder="أدخل اسم كاملاً..."
                           name="name"
-                          minlength="20"
                           required
                         />
-                        <span class="error">يجب ألا يقل أسم الطفل عن 20 حرف</span>
                       </div>
                       <div class="form-group">
                         <label>رقم الهوية</label>
@@ -162,7 +159,7 @@
                       <div class="form-group" style="position:relative">
                         <label>المدينة </label>
                         <select name="city_id" class="form-control cities js-example-basic-single" required>
-                        
+
 						</select>
 
                       </div>
@@ -309,7 +306,6 @@
                             placeholder="أذكر التعليق هنا..."
                             name="health_problems_com"
                             id="comment"
-                            disabled
                           />
                         </div>
                       </div>
@@ -709,7 +705,7 @@
 
                       </div>
                     </div>
-                    
+
                     <!--<button class="btn w-50 m-auto d-block">حفظ البيانات</button>-->
                   </div>
 
@@ -751,7 +747,7 @@
                           name="mom_date"
                         />
             <img src="{{asset('dist/front/assets/images/calender.png')}}" class="datepickerimg" width="20px" alt="">
-                                                
+
                       </div>
 
                       <div class="form-group">
@@ -1073,7 +1069,6 @@
                           <div class="medical-data-title">
                             <h4>هل الحمل بالطفل كان</h4>
                           </div>
-                      
                           <div class="custom-control custom-radio">
                             <input
                               type="radio"
@@ -1153,7 +1148,6 @@
                           </div>
                         </div>
 
-        
                       </div>
 
                       <div class="medical-data w-100">
@@ -1185,7 +1179,7 @@
                             type="text"
                             class="form-control"
                             id="comment"
-                            disabled 
+                            disabled
                             name="mom_pregnancy_problems_com"
                             placeholder="أذكر التعليق هنا..."
                           />
@@ -1215,7 +1209,6 @@
                           </div>
                         </div>
 
-                  
                       </div>
 
                       <div class="medical-data w-100">
@@ -1247,7 +1240,7 @@
                             type="text"
                             class="form-control"
                             id="comment"
-                            disabled 
+                            disabled
                             name="mom_birth_problems_com"
                             placeholder="أذكر التعليق هنا..."
                           />
@@ -1313,7 +1306,7 @@
                           </div>
                         </div>
 
-                
+
                       </div>
                     </div>
                     <!--<button class="btn w-50 m-auto d-block">حفظ البيانات</button>-->
@@ -1515,7 +1508,6 @@
 
           </form>
     </div>
-    
     @endif
 
 
@@ -1530,28 +1522,28 @@
     <script src="{{asset('dist/front/assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('dist/front/assets/js/jquery-3.6.3.js')}}"></script>
     <script src="{{asset('dist/front/assets/js/app.js')}}"></script>
-    
+
     <script src="{{asset('dist/front/assets/js/select2.min.js')}}"></script>
-    
+
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.1.0/js/select2.min.js"></script>-->
-    
+
     <script>
 
     $(':radio').on('click', function() {
-    
+
     if($(this).val() == '1'){
-        
-        $( this ).parent().parent().parent().children().children('#comment').css("visibility", "visible") 
+
+        $( this ).parent().parent().parent().children().children('#comment').css("visibility", "visible")
         $( this ).parent().parent().parent().children().children('#comment').prop('disabled',false);
          $( this ).parent().parent().parent().children().children('#comment').prop('required',true);
-   
+
     }else{
-            $( this ).parent().parent().parent().children().children('#comment').css("visibility", "hidden") 
+            $( this ).parent().parent().parent().children().children('#comment').css("visibility", "hidden")
             $( this ).parent().parent().parent().children().children('#comment').prop('disabled',true);
             $( this ).parent().parent().parent().children().children('#comment').prop('required',false);
 
     }
-    
+
 });
       $(document).ready(function () {
         $(".js-example-basic-single").select2();
@@ -1584,12 +1576,12 @@ _token        : $("input[name='_token']").val()
 });
 
 
-    
+
     </script>
     <script src="{{asset('vendor\realrashid\sweet-alert\resources\js\sweetalert.all.js')}}"></script>
     @include('sweetalert::alert')
 @include('sweetalert::validation-alert')
-       
+
         <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
         <script>
    $(function(){
@@ -1604,31 +1596,31 @@ _token        : $("input[name='_token']").val()
     });
 });
         </script>
-        
-        
+
+
              <script>
           let childNme = document.querySelector(".child-name");
           let  saveData = document.querySelector(".save-data");
           let error = document.querySelector(".error");
           childNme.onkeyup = function(){
             let count =childNme.value.length;
-  
+
     error.style.color="red";
            let countMsg = 20-count;
       error.innerText = "باقي" + countMsg ;
       saveData.disabled = true;
- 
-       
+
+
       if(countMsg == 1 ){
         error.innerText = "باقي حرف واحد"  ;
         saveData.disabled = true;
       }
       else if(countMsg == 0 || count > 20){
         error.style.display="none";
-      
+
         saveData.disabled = false;
       }
-   
+
 }
         </script>
 

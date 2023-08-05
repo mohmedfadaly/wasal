@@ -255,7 +255,6 @@ form .form-group input {
   form .form-group input {
     width: 95%;
   }
-
   .login form .form-group input::placeholder {
     font-size: 12px;
   }

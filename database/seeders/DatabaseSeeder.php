@@ -14,7 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-
         $countries = [
             array('id' => '1','name_ar' => 'أندورا','name_fr' => 'Andorre','name_en' => 'Andorra','code' => 'ad'),
             array('id' => '2','name_ar' => 'الإمارات العربية المتحدة','name_fr' => 'Emirats Arabes Unis','name_en' => 'United Arab Emirates','code' => 'ae'),
@@ -3634,7 +3633,7 @@ class DatabaseSeeder extends Seeder
 
 
             DB::table('cities')->insert($cities);
-    
+
         $apps = [
             array('id' => '1', 'name' => 'A'),
             array('id' => '2', 'name' => 'B'),

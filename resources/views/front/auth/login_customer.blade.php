@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="{{asset('dist/front/assets/css/login.css')}}" />
   </head>
   <body class="login">
-
   <header class="main-header">
       <div class="container">
         <div class="row justify-content-between align-items-center">
@@ -60,7 +59,7 @@
             {{csrf_field()}}
               <legend>تسجيل الدخول</legend>
               <div class="form-group">
-                <div class="input-icon">            
+                <div class="input-icon">
                 <input
                   type="text"
                   name="name"
@@ -71,10 +70,10 @@
                   placeholder=" أسم المستخدم"
                 />
                  <i class="fa-regular fa-user icon"></i>
-                </div> 
+                </div>
               </div>
               <div class="form-group">
-                  <div class="input-icon">            
+                  <div class="input-icon">
                 <input
                   type="password"
                   name="password"
@@ -154,21 +153,21 @@
         function getVal() {
         const val = document.querySelector('input').value;
         let icon = document.querySelector(".icon");
-        
+
         if(val != "" ){
           icon.style.display="none";
         }
-   
+
       }
-      
+
       function getPass() {
         const pass = document.querySelector("input[type='password']").value;
-  
+
         let passIcon = document.querySelector(".pass-icon");
-        if(pass != "" ){ 
+        if(pass != "" ){
           passIcon.style.display="none";
         }
-   
+
       }
     </script>
     @include('sweetalert::alert')

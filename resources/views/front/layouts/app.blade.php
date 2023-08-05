@@ -12,7 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-     <link rel = "icon" href = 
+     <link rel = "icon" href =
 "{{asset('dist/front/assets/images/headerlogo.png')}}"
         type = "image/x-icon">
     <link rel="stylesheet" href="{{asset('dist/front/assets/css/bootstrap.min.css')}}" />
@@ -24,7 +24,7 @@
     .user-dashboard-details {
     margin-top: 65px;
 }
-  
+
   </style>
 
   </head>
@@ -39,8 +39,8 @@
   @include('front.parts.nav')
 
   @endif
-  
-    
+
+
 
         @yield('content')
         @include('front.parts.footer')
@@ -54,4 +54,3 @@
 @include('sweetalert::validation-alert')
   </body>
 </html>
-   
