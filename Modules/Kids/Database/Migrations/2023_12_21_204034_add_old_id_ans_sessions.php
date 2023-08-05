@@ -4,18 +4,18 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Sessions extends Migration
+class AddOldIdAnsSessions extends Migration
 {
- /**
+    /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('sessions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('hex')->nullable();
+        Schema::table('ans_sessions', function (Blueprint $table) {
+            $table->unsignedBigInteger('ans_old_id')->nullable();
+            $table->foreign('ans_old_id')->references('id')->on('appales_quests')->onDelete('cascade');
         });
     }
 
@@ -27,6 +27,6 @@ class Sessions extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('sessions');
+        Schema::dropIfExists('ans_sessions');
     }
 }

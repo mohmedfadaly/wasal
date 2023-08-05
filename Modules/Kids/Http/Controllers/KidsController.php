@@ -332,6 +332,7 @@ class KidsController extends Controller
         $session_Id    = $request->input("session_Id");
         $count_session = Usersessions::with('Appsessions.Appale','Appsessions.Anssessions')->where('doctor_id',auth()->guard('customer')->user()->id)->where('kid_id',$id)->count();
 
+
         if ($session_Id) {
 
             $SessionK = SessionK::where('id',$session_Id)->first();
@@ -348,9 +349,12 @@ class KidsController extends Controller
 
         $Usersessions = Usersessions::with('Appsessions.Appale','Appsessions.Anssessions')->where('session_id',$SessionK->id)->where('doctor_id',auth()->guard('customer')->user()->id)->where('kid_id',$id)->latest()->first();
 
+
         if($Usersessions){
 
         }else{
+            $Usersessionsold = Usersessions::with('Appsessions.Appale','Appsessions.Anssessions','Anssessions')->where('session_id',$SessionK->id - 1)->where('doctor_id',auth()->guard('customer')->user()->id)->where('kid_id',$id)->latest()->first();
+
             $Usersessions = new Usersessions;
             $Usersessions->session_id        = $SessionK->id;
             $Usersessions->doctor_id         = auth()->guard('customer')->user()->id;
@@ -367,6 +371,17 @@ class KidsController extends Controller
                     $Anssessions->session_id     = $Usersessions->id;
                     $Anssessions->ques_id         = $quse->id;
                     $Anssessions->app_id         = $Appsessions->id;
+                    if(isset($Usersessionsold)){
+
+                        foreach ($Usersessionsold->Anssessions as $key => $val) {
+                            if ($val->ques_id == $quse->id) {
+                                $Anssessions->hex_old         = $Usersessionsold->Session->hex;
+                                $Anssessions->ans_old_id     = $val->ans_id ?? $val->ans_old_id;
+
+                            }
+                        }
+                    }
+
                     $Anssessions->save();
                 }
             }
@@ -385,13 +400,43 @@ class KidsController extends Controller
         $answer = $request->ans;
 
         $Usersessions = Usersessions::with('Appsessions.Appale','Appsessions.Anssessions')->where('session_id',$request->Session)->where('doctor_id',auth()->guard('customer')->user()->id)->where('kid_id',$id)->latest()->first();
+        $Usersessionsold = Usersessions::with('Appsessions.Appale','Appsessions.Anssessions','Anssessions')->where('session_id',$request->id - 1)->where('doctor_id',auth()->guard('customer')->user()->id)->where('kid_id',$id)->latest()->first();
+        $Usersessionsnew = Usersessions::with('Appsessions.Appale','Appsessions.Anssessions','Anssessions')->where('session_id',$request->id + 1)->where('doctor_id',auth()->guard('customer')->user()->id)->where('kid_id',$id)->latest()->first();
 
         if($Usersessions){
             foreach ($request->ques as $key => $value) {
                 if ($answer[$value] !== null) {
                     $Anssessions = Anssessions::where('ques_id',$value)->where('session_id',$Usersessions->id)->latest()->first();
                     $Anssessions->ans_id         = $answer[$value];
+                    if(isset($Usersessionsold)){
+
+                        foreach ($Usersessionsold->Anssessions as $ke => $val) {
+                            if ($val->ques_id == $value) {
+                                $Anssessions->ans_old_id         = $val->ans_id ?? $val->ans_old_id;
+                                $Anssessions->hex_old         = $Usersessionsold->Session->hex;
+
+                            }
+                        }
+                    }
+
                     $Anssessions->save();
+                }
+
+            }
+
+        }
+
+        if(isset($Usersessionsnew)){
+            foreach ($request->ques as $key => $value) {
+                if ($answer[$value] !== null) {
+                    foreach ($Usersessionsnew->Anssessions as $key => $val) {
+                        if ($val->ques_id == $value) {
+                            $Anssessionsnew = Anssessions::where('ques_id',$value)->where('session_id',$Usersessionsnew->id)->latest()->first();
+                            $Anssessionsnew->hex_old         = $Usersessionsnew->Session->hex;
+                            $Anssessionsnew->ans_old_id         = $answer[$value];
+                        }
+                    }
+                    $Anssessionsnew->save();
                 }
 
             }

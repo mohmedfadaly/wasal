@@ -134,7 +134,14 @@
                                     <div class="c-rating-wrapper numbers-ques">
 
                                         @foreach ($num->Appale_Nums->Appale_Ques as $ke => $quest)
-                                        <span class="star" style="background-color: {{$num->ans_id >= $quest->id ? $Usersessions->Session->hex : ''}};" data-quest="{{$num->Appale_Nums->id}}" data-id="{{$quest->id}}">{{$ke + 1}}</span>
+
+                                        @if ($num->ans_old_id >= $quest->id)
+                                            <span class="stars" style="background-color: {{$num->hex_old}};" data-quest="{{$num->Appale_Nums->id}}" data-id="{{$quest->id}}">{{$ke + 1}}</span>
+
+                                        @else
+                                            <span class="star" style="background-color: {{$num->ans_id >= $quest->id ? $Usersessions->Session->hex : ''}};" data-quest="{{$num->Appale_Nums->id}}" data-id="{{$quest->id}}">{{$ke + 1}}</span>
+
+                                        @endif
 
                                         @endforeach
 
