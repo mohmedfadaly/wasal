@@ -17,10 +17,11 @@ class Customer extends Authenticatable
         return $this->hasMany('App\Models\Files','user_id','id');
     }
     
+
     public function getAvatarUrlAttribute()
     {
         return URL::to('uploads/customers/avatar/'.$this->avatar);
     }
 
-   
+
 }

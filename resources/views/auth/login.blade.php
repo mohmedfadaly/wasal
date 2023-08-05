@@ -40,7 +40,7 @@
   border-radius: 41px;">
     {{-- <span>لوحة التحكم</span> --}}
     <br>
-    <img src="{{asset('dist/front/assets/images/logo/Group.png')}}" style="width: 120px;position: relative;bottom: 46px;">
+    <img src="{{asset('dist/front/assets/images/headerlogo.png')}}" style="width: 120px;position: relative;bottom: 46px;">
   </div>
   <!-- /.login-logo -->
   <div class="card" style="border-radius: 30px">

@@ -1,14 +1,20 @@
 @extends('front.layouts.app')
 
 @section('style')
-<title>سلسلة تك - الرئيسية</title>
+<title>وصل - الرئيسية</title>
 
 @endsection
 @section('content')
 <!-- START:: HEADER -->
-@if(auth()->guard('customer')->check() || auth()->guard('provider')->check())
+@if(auth()->guard('customer')->check())
+    @if(auth()->guard('customer')->user()->active == 0)
+        @include('front.home.home_vrayfiy')
 
-@include('front.home.home')
+    @else
+        @include('front.home.home')
+
+    @endif
+
 
 @else
 

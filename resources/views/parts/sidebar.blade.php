@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4"  style="background-color: {{ auth()->user()->sidebar_background }} !important;">
   <!-- Brand Logo -->
   <a href="{{route('home')}}" class="brand-link text-left" style="padding: 3px;background: #fff;border-bottom: 1px solid #fff;">
-    <img src="{{asset('dist/front/assets/images/logo/Group.png')}}" style="width: 100%;
+    <img src="{{asset('dist/front/assets/images/headerlogo.png')}}" style="width: 100%;
     height: 45px;
     position: relative;
     ">

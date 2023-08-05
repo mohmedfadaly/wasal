@@ -779,7 +779,6 @@ Route::get('dd',function(){
 	
 });
 // Auth::routes();
-Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
 Route::get('lang/change', 'SettingController@change')->name('changeLang');
 Route::post('color/change', 'HomeController@color')->name('color_change');
 

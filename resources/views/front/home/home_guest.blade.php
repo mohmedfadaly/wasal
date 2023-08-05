@@ -1,192 +1,172 @@
+ <div class="preloader">
+    <div class="prelaoder-img">
+      <img src="{{asset('dist/front/assets/images/Group 1000003787.png')}}" alt="">
 
-<!-- END:: HEADER -->
-
-<!-- START:: SLIDER HERO SECTION -->
-<section class="hero_section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-5 wow animate fadeInRight">
-                <div class="text-hero-section">
-                    <h1 class="text-gradient">سلسلة تيكـ</h1>
-                    <h2>تضم جميع المسوقين العرب </h2>
-                    <p>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة , لقد تم توليد هذا النص من مولد النص
-                        العربي هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة , </p>
-                    <a href="{{ route('change_type') }}" class="btn-animation-1">
-                        انظم الى سلسله الأن
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-7 wow animate fadeInLeft">
-                <div class="image-hero-section">
-                    <img src="{{asset('dist/front/assets/images/all/hero_section.svg')}}" width="" height="" alt="hero_section">
-                </div>
-            </div>
-        </div>
     </div>
-</section>
-<!-- END:: SLIDER HERO SECTION -->
+    <div class="preloader-sec h-100">
+      <div class="d-flex justify-content-center align-items-center h-100">
 
+        <div class="loader">
 
-<!-- START:: HOW TO STARTED SECTION -->
-<section class="how_to_started_section bg-gray wow animate fadeInUp">
-    <div class="container">
-        <div class="title_section">
-            <h3>كـيف تبدأ رحلتك مع سلسله تيكـ</h3>
+          <img src=  "{{asset('dist/front/assets/images/headerlogo.png')}}" alt="">
+        
+          <br>
+          <img src="{{asset('dist/front/assets/images/Group 1000003788.png')}}" class="mt-md-5 mt-3 mb-1" width="90px">
+
+          <div class="loading-bar">
+            <span></span>
+          </div>
         </div>
+
+      </div>
+    </div>
+  </div>
+<div class="main">
+      <div class="main-img">
+        <img src="{{asset('dist/front/assets/images/Mask group.png')}}" alt="" />
+      </div>
+    </div>
+    <div class="aboutUs">
+      <div class="container">
         <div class="row">
-            <!-- SINGLE CARD -->
-            <div class="col-md-3 wow animate fadeIn">
-
-                <div class="card card-how-to">
-                    <div class="icon">
-                        <img src="{{asset('dist/front/assets/images/icons/login.svg')}}" alt="Subscribe" height="" width="">
-                        <img src="{{asset('dist/front/assets/images/icons/login.svg')}}" alt="Subscribe" class="hide-icon" height=""
-                            width="">
-                    </div>
-                    <div class="text">
-                        <h5>إشترك!</h5>
-                        <p>
-                            سجل الدخول في الموقع والتحق بكوكبة من ألمع المسوقين العرب
-                        </p>
-                    </div>
-                </div>
-
+          <div class="col-12">
+            <div class="sec-img">
+              <img
+                src="{{asset('dist/front/assets/images/Group 1000003469.png')}}"
+                height="64px"
+                width="64px"
+                alt=""
+              />
             </div>
-            <!-- SINGLE CARD -->
-            <div class="col-md-3 wow animate fadeIn">
-
-                <div class="card card-how-to">
-                    <div class="icon">
-                        <img src="{{asset('dist/front/assets/images/icons/search.svg')}}" alt="Subscribe" height="" width="">
-                        <img src="{{asset('dist/front/assets/images/icons/search.svg')}}" alt="Subscribe" class="hide-icon" height=""
-                            width="">
-                    </div>
-                    <div class="text">
-                        <h5>عرض الخدمات</h5>
-                        <p>
-                            ابحث عن الخدمة التي تحتاجها باستخدام مربع البحث في الأعلى أو عبر التصنيفات.
-                        </p>
-                    </div>
-                </div>
-
+            <div class="title">
+              <h3>عن وصل</h3>
             </div>
-            <!-- SINGLE CARD -->
-            <div class="col-md-3 wow animate fadeIn">
-
-                <div class="card card-how-to">
-                    <div class="icon">
-                        <img src="{{asset('dist/front/assets/images/icons/receive.svg')}}" alt="Subscribe" height="" width="">
-                        <img src="{{asset('dist/front/assets/images/icons/receive.svg')}}" alt="Subscribe" class="hide-icon" height=""
-                            width="">
-                    </div>
-                    <div class="text">
-                        <h5>اطلب الخدمة</h5>
-                        <p>
-                            راجع وصف الخدمة وتقييمات المشترين ثم اطلبها
-                        </p>
-                    </div>
-                </div>
-
+            <div class="text">
+              <p>
+                نظام إلكتروني يتيح للأخصائيين ومحللين السلوك التطبيقي العمل على
+                تقييم وتأهيل وتدريب الحالات التي تعاني من اضطراب طيف التوحد
+                والاضطرابات النمائية الأخرى وفق نظام تحليل السلوك التطبيقي (ABA)
+              </p>
             </div>
-            <!-- SINGLE CARD -->
-            <div class="col-md-3 wow animate fadeIn">
+          </div>
 
-                <div class="card card-how-to">
-                    <div class="icon">
-                        <img src="{{asset('dist/front/assets/images/icons/service.svg')}}" alt="Subscribe" height="" width="">
-                        <img src="{{asset('dist/front/assets/images/icons/service.svg')}}" alt="Subscribe" class="hide-icon" height=""
-                            width="">
-                    </div>
-                    <div class="text">
-                        <h5>استلم خدمتك</h5>
-                        <p>
-                            تواصل مباشرة داخل موقع حتى استلام طلبك كاملاً.
-                        </p>
-                    </div>
-                </div>
-
+          <div class="col-12">
+            <div class="sec-img">
+              <img src="{{asset('dist/front/assets/images/Group 1000003476.png')}}" alt="" />
             </div>
+            <div class="title">
+              <h3>خدماتنا</h3>
+            </div>
+            <div class="text">
+              <p>
+                نسعى لتقديم أفضل الخدمات التي تتناسب مع احتياجات المختصين في
+                المجال، والتي تبدأ بالتقييمات الأولية وإدراج الخطة العلاجية
+                المناسبة التي تتوافق مع إمكانيات وقدرات ومدى ادراك كل حالة من
+                خلال مقياس (ABLLS) وتقديم الجلسات اليومية وذلك لتحقيق أهداف
+                الخطط العلاجية ومتابعة تقييم الحالات ومدى نسبة تطورها بشكل
+                مستمر.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
-<!-- END:: HOW TO STARTED SECTION -->
 
-<!-- START:: SERVICES SECTION -->
-@include('front.parts.services')
-
-<!-- END:: SERVICES SECTION -->
-
-<!-- START:: SERVICES SECTION -->
-@include('front.parts.store')
-
-<!-- END:: SERVICES SECTION -->
-
-<!-- START:: FIELDS SERVICES SECTION -->
-@include('front.parts.sections')
-
-<!-- END:: FIELDS SERVICES SECTION -->
-
-<!-- START:: BLOGS SECTION -->
-@include('front.parts.articls')
-
-<!-- END:: BLOGS SECTION -->
-
-<!-- START:: VIDEOS SECTION -->
-@include('front.parts.videos')
-
-<!-- END:: VIDEOS SECTION -->
-
-<!-- START:: MARKETERS SECTION -->
-@include('front.parts.providers')
-
-<!-- END:: MARKETERS SECTION -->
-
-<!-- START:: BROADCAST SECTION -->
-@include('front.parts.bodcasts')
-
-<!-- END:: BROADCAST SECTION -->
-
-<!-- START:: STATISTICS SECTION -->
-<section class="statistics_section">
-    <div class="container">
-        <div class="row" id="counter">
-            <div class="col-6 col-sm-3 col-md-3">
-                <div class="single-statistic">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <h4 class="text-gradient">+</h4>
-                        <div class="counter-value text-gradient" data-count="{{count($providers)}}">0</div>
-                    </div>
-                    <h3>عدد المسوقين</h3>
+    <div class="aims">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+    
+            
+              <div class="flip-card">
+            
+                <div class="aims-card  flip-card-back">
+                  <div class="aims-img">
+                    <img src="{{asset('dist/front/assets/images/solution (2) 1.png')}}"alt="" />
+                  </div>
+                  <div class="aim-title">
+                    <h4>أهدافنا</h4>
+                  </div>
+            
+                 </div>
+               <div class="aims-card  flip-card-front">
+                <div class="aims-img">
+                  <img src="{{asset('dist/front/assets/images/solution (2) 1.png')}}" alt="" />
                 </div>
-            </div>
-            <div class="col-6 col-sm-3 col-md-3">
-                <div class="single-statistic">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <h4 class="text-gradient">+</h4>
-                        <div class="counter-value text-gradient" data-count="{{count($customers)}}">0</div>
-                    </div>
-                    <h3>عملاء سعداء</h3>
+                <div class="aim-title">
+                  <h4>أهدافنا</h4>
                 </div>
-            </div>
-            <div class="col-6 col-sm-3 col-md-3">
-                <div class="single-statistic">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <h4 class="text-gradient">+</h4>
-                        <div class="counter-value text-gradient" data-count="{{count($articles)}}">0</div>
-                    </div>
-                    <h3>عدد المقالات</h3>
+                <div class="aim-text">
+                  <p>
+                    تطوير سبل التقييم والتأهيل والتدريب لزيادة قدرة الأخصائيين
+                    ومحللين السلوك على تقديم خدمات تحليل السلوك للحالات التي تعاني
+                    من اضطراب طيف التوحد والاضطرابات النمائية بكل يسر وسهولة
+                  </p>
                 </div>
+               </div>
+           
             </div>
-            <div class="col-6 col-sm-3 col-md-3">
-                <div class="single-statistic">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <h4 class="text-gradient">+</h4>
-                        <div class="counter-value text-gradient" data-count="{{count($services)}}">0</div>
-                    </div>
-                    <h3>خدمات متاحة</h3>
+          </div>
+          <div class="col-md-4">
+             <div class="flip-card">
+              <div class="aims-card  flip-card-back scaled-colored-back">
+                <div class="aims-img">
+                  <img src="{{asset('dist/front/assets/images/solution (1) 1.png')}}" alt="" />
                 </div>
+                <div class="aim-title">
+                  <h4>رسالتنا</h4>
+                </div>
+          
+               </div>
+               
+               <div class="aims-card  flip-card-front   scaled-colored-front">
+                <div class="aims-img">
+                  <img src="{{asset('dist/front/assets/images/solution (1) 1.png')}}" alt="" />
+                </div>
+                <div class="aim-title">
+                  <h4>رسالتنا</h4>
+                </div>
+                <div class="aim-text">
+                  <p>
+                    تقديم خدمات تحليل السلوك التطبيقي إلكترونياً لمساعدة الأخصائيين
+                     ومحللي السلوك على الاستفادة من التقنية خلال موقع “وصل”
+                  </p>
+                </div>
+               </div>
+              
             </div>
+          </div>
+          <div class="col-md-4">
+             <div class="flip-card">
+            
+                <div class="aims-card  flip-card-back">
+                  <div class="aims-img">
+                    <img src="{{asset('dist/front/assets/images/strategic-vision (1) 1.png')}}" alt="" />
+                  </div>
+                  <div class="aim-title">
+                    <h4>رؤيتنا</h4>
+                  </div>
+            
+                 </div>
+               <div class="aims-card  flip-card-front">
+                <div class="aims-img">
+                  <img src="{{asset('dist/front/assets/images/strategic-vision (1) 1.png')}}" alt="" />
+                </div>
+                <div class="aim-title">
+                  <h4>رؤيتنا</h4>
+                </div>
+                <div class="aim-text">
+                  <p>تتمثل رؤيتنا في تقديم منظومة 
+                    إلكترونية متكاملة تتيح للأخصائيين ومحللين السلوك التطبيقي
+                     جميع الخدمات التي تسهم في تطوير الحالات التي تعاني من
+                     اضطراب طيف التوحد والاضطرابات النمائية الاخرى
+
+                  </p>
+                </div>
+               </div>
+           
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</section>
-<!-- END:: STATISTICS SECTION -->
