@@ -455,7 +455,12 @@ class KidsController extends Controller
         Alert::success('عملية ناجحة','تم الحذف');
         return back();
     }
-
+    public  function  showVerticalDraw(Request $request,$id)
+    {
+        $sessions = Usersessions::where('kid_id',$id)->get();
+//        dd($sessions);
+        return view('kids::front.vertical_drawing',compact('sessions'));
+    }
 
 
 

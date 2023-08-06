@@ -66,7 +66,7 @@
                 <a class="addnew"> <img src="{{asset('dist/front/assets/images/plus.png')}}" alt=""> إضافة تقييم جديد </a>
               </button>
               <button type="submit" class="border-0 edit-file mt-md-4 mb-md-4 mb-3 mt-2 me-3">
-                <a> <img src="{{asset('dist/front/assets/images/paint.png')}}"> الرسم العمودي للتقييم </a>
+                  <a href="{{ route('add-vertical', ['id' => $kid->id]) }}">  <img src="{{asset('dist/front/assets/images/paint.png')}}" alt=""> الرسم العمودي للتقييم </a>
               </button>
             </div>
 
@@ -85,7 +85,7 @@
                                 </div>
                             @endif
 
-                            <p class="sessionsdate" data-id="{{$val->Session->id}}"  style="cursor: pointer;font-size: 15px;"><span> تقييم بتاريخ</span> {{date('Y/m/d', strtotime($val->created_at))}} </p>
+                            <h9 class="sessionsdate" data-id="{{$val->Session->id}}"  style="cursor: pointer;font-size: 15px;"><span> تقييم بتاريخ</span> {{date('Y/m/d', strtotime($val->created_at))}} </h9>
                         </div>
                     @endforeach
 
@@ -208,7 +208,7 @@
     @endif
     <!--footer-->
     @include('front.parts.footer')
-      <!--footer-->
+    <!--footer-->
 
     <script src="{{asset('dist/front/assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('dist/front/assets/js/jquery-3.6.3.js')}}"></script>
