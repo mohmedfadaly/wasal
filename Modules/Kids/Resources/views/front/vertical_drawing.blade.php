@@ -28,8 +28,8 @@
     <div class="container">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">الرئيسية </a></li>
-            <li class="breadcrumb-item"><a href="#"><i class="fa-solid fa-chevron-left"></i> تسجيل دخول </a></li>
-            <li class="breadcrumb-item active" aria-current="page"> <i class="fa-solid fa-chevron-left"></i> عربي
+            <li class="breadcrumb-item"><a href="javascript:history.back()"><i class="fa-solid fa-chevron-left"></i> التقييم Appels </a></li>
+            <li class="breadcrumb-item active" aria-current="page"> <i class="fa-solid fa-chevron-left"></i> الرسم العمودي للتقييم
             </li>
         </ol>
     </div>
@@ -52,7 +52,6 @@
 
                     <div class="dates row">
                         @foreach($sessions as $session)
-{{--                            {{dd($session->hex)}}--}}
                         <div class="date col-lg-2 col-md-3 col-6" style="background-color:{{$session->Session->hex}};">
                             <a><h9> تقييم بتاريخ {{date('Y/m/d', strtotime($session->created_at))}} </h9>
                             </a>
@@ -151,6 +150,13 @@
                         </ul>
                     </div>
                     <div class="tab-content mt-5">
+{{--                        @foreach ($sessions as $session)--}}
+{{--                            @foreach ($session->Appsessions as $name)--}}
+{{--                                <h3>--}}
+{{--                                    {{$name->name}}B--}}
+{{--                                </h3>--}}
+{{--                            @endforeach--}}
+{{--                        @endforeach--}}
                         <div id="A" class="container tab-pane active tab-pane-ablis">
                             <br />
                             <div class="letter-container">
