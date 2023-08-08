@@ -29,7 +29,7 @@
   <nav aria-label="breadcrumb mt-5 mb-5">
     <div class="container">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">الرئيسية </a></li>
+        <li class="breadcrumb-item"><a href="/">الرئيسية </a></li>
         <li class="breadcrumb-item active" aria-current="page"> <i class="fa-solid fa-chevron-left"></i> المريض </li>
       </ol>
     </div>
@@ -44,7 +44,7 @@
                     <h3>بيانات المريض</h3>
                   </div>
                 </div>
-              
+
                 <div class="col-md-6">
                   <button type="submit" class="border-0 edit-file mt-md-4 mb-md-4 mb-3 mt-2">
                     <a href="{{ route('edit_patient', ['id' => $Kid->id]) }}">  <img src="{{asset('dist/front/assets/images/edit.png')}}" alt="">  تعديل البيانات </a>
@@ -122,7 +122,7 @@
                                     <p>{{$Kid->city->name_ar}}</p>
 
                                 </div>
-                          
+
 
                                 <div class="medical-data mt-4 w-100">
                                     <div class="questions d-flex justify-content-between">
@@ -258,13 +258,13 @@
                                         @if($Kid->Dad->work == 'private_work')  موظف قطاع خاص @endif
                                         @if($Kid->Dad->work == 'free_work')    أعمال حرة @endif
                                        @if($Kid->Dad->work == "don't_work")  لا يعمل @endif
-                         
-                      
-                      
+
+
+
 
                                     </p>
                                 </div>
-                           
+
 
                                 <div class="medical-data mt-3 w-100">
                                     <div class="questions d-flex justify-content-between">
@@ -288,7 +288,7 @@
                                             <h4>هل لدى الأب إعاقة</h4>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            <p>    @if($Kid->Dad->obstruction == '1') نعم @endif 
+                                            <p>    @if($Kid->Dad->obstruction == '1') نعم @endif
                                                 @if($Kid->Dad->obstruction == '0') لا @endif -</p>
                                             <div class="comment">
                                                 <p>{{$Kid->Dad->obstruction_com}} </p>
@@ -436,9 +436,9 @@
                                         @if($Kid->Mom->work == 'private_work')  موظف قطاع خاص @endif
                                         @if($Kid->Mom->work == 'free_work')  أعمال حرة @endif
                                         @if($Kid->Mom->work == "don't_work")   لا يعمل @endif</p>
-                                     
+
                                 </div>
-                           
+
 
                                 <div class="medical-data mt-3 w-100">
                                     <div class="questions d-flex justify-content-between">
@@ -459,7 +459,7 @@
                                             <h4>هل لدى الأم إعاقة</h4>
                                         </div>
                                         <div class="custom-control custom-radio">
-                                            
+
                                             <p> @if($Kid->Mom->obstruction == '1')  نعم @endif
                                                 @if($Kid->Mom->obstruction == '0') لا  @endif -</p>
                                             <div class="comment">
@@ -586,7 +586,7 @@
                                                 @if($Kid->Mom->pregnancy_month == '8') شهور 8  @endif
                                                 @if($Kid->Mom->pregnancy_month == '9')  شهور 9 @endif
                                                 @if($Kid->Mom->pregnancy_month == '10') شهور 10  @endif </p>
-                                            
+
 
                                         </div>
                                     </div>
@@ -669,7 +669,7 @@
                                         <div class="custom-control custom-radio">
                                             <p> @if($Kid->Mom->lactation == '1') نعم @endif
                                                 @if($Kid->Mom->lactation == '0') لا @endif </p>
-                                            
+
                                         </div>
                                     </div>
 
@@ -717,7 +717,7 @@
                                 </div>
                                 <div class="form-group family-data">
                                     <label>عدد الأشقاء الاناث </label>
-                                    
+
                                         @if($Kid->Family->num_of_sis == '1')  1 @endif
                                         @if($Kid->Family->num_of_sis == '2')  2 @endif
                                         @if($Kid->Family->num_of_sis == '3') 3  @endif
@@ -752,7 +752,7 @@
                                     <p>
                                         @if($Kid->Family->bro_autism == 'no')  لا، لا يوجد @endif
                                         @if($Kid->Family->bro_autism == 'bro_autism') لديه شقيق يعاني من التوحد @endif
-                                        @if($Kid->Family->bro_autism == 'many_bro_autism')  أكتر من شقيق يعاني من التوحد  
+                                        @if($Kid->Family->bro_autism == 'many_bro_autism')  أكتر من شقيق يعاني من التوحد
                                         @endif
                                     </p>
 
@@ -797,7 +797,7 @@
                                         @if($Kid->Family->income == '10,000 - 15,000')  10,000 - 15,000 ريال @endif
                                         @if($Kid->Family->income == '15,000 - 20,000')  15,000 - 20,000 ريال @endif
                                         @if($Kid->Family->income ==  '20,000') أكثر من 20,000 ريال @endif
-                                        
+
                                     </p>
                                 </div>
                             </div>
@@ -825,7 +825,7 @@
     <!--footer-->
     @include('front.parts.footer')
       <!--footer-->
-    
+
     <script src="{{asset('dist/front/assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('dist/front/assets/js/jquery-3.6.3.js')}}"></script>
     <script src="{{asset('dist/front/assets/js/app.js')}}"></script>

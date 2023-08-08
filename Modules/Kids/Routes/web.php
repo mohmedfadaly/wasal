@@ -23,6 +23,7 @@ Route::get('patient-evalute/{id}','KidsController@evaluteKid')->name('evalute-pa
 Route::get('patient/{id}/edit','KidsController@editKid')->name('edit_patient')->middleware('customer');
 Route::get('patient/{id}/data','KidsController@showKidData')->name('show_patient_data')->middleware('customer');
 Route::get('appels/{id}','KidsController@appels')->name('add-appels')->middleware('customer');
+Route::get('appels/{id}/vertical','KidsController@showVerticalDraw')->name('add-vertical')->middleware('customer');
 Route::post('store-app-kid/{id}','KidsController@addappels')->name('addappels')->middleware('customer');
 Route::post('store-app-kid','KidsController@Deletesession')->name('Deletesession')->middleware('customer');
 

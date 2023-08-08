@@ -29,7 +29,7 @@
     <nav aria-label="breadcrumb mt-5 mb-5">
       <div class="container">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">الرئيسية </a></li>
+          <li class="breadcrumb-item"><a href="/">الرئيسية </a></li>
           <li class="breadcrumb-item active" aria-current="page"> <i class="fa-solid fa-chevron-left"></i> بيانات المريض </li>
         </ol>
       </div>
@@ -91,7 +91,7 @@
       </div>
     </div>
     @endif
-  
+
     @else
 
         @include('front.home.home_guest')
@@ -100,7 +100,7 @@
     <!--footer-->
     @include('front.parts.footer')
       <!--footer-->
-    
+
     <script src="{{asset('dist/front/assets/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('dist/front/assets/js/jquery-3.6.3.js')}}"></script>
     <script src="{{asset('dist/front/assets/js/app.js')}}"></script>
