@@ -44,7 +44,7 @@
     <nav aria-label="breadcrumb mt-5 mb-5">
       <div class="container">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="#">الرئيسية </a></li>
+          <li class="breadcrumb-item"><a href="/">الرئيسية </a></li>
           <li class="breadcrumb-item active" aria-current="page"> <i class="fa-solid fa-chevron-left"></i> بيانات المريض </li>
         </ol>
       </div>
