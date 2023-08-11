@@ -448,7 +448,7 @@ class KidsController extends Controller
 
                         foreach ($Usersessionsold->Anssessions as $key => $val) {
                             if ($val->ques_id == $quse->id) {
-                                $Anssessions->hex_old = $Usersessionsold->Session->hex;
+                                $Anssessions->hex_old = $val->ans_id == null ? $val->hex_old : $Usersessionsold->Session->hex;
                                 $Anssessions->ans_old_id = $val->ans_id ?? $val->ans_old_id;
 
                             }
@@ -477,6 +477,7 @@ class KidsController extends Controller
         $Usersessionsold = Usersessions::with('Appsessions.Appale', 'Appsessions.Anssessions', 'Anssessions')->where('session_id', $request->id - 1)->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->latest()->first();
         $Usersessionsnew = Usersessions::with('Appsessions.Appale', 'Appsessions.Anssessions', 'Anssessions')->where('session_id', $request->id + 1)->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->latest()->first();
 
+
         if ($Usersessions) {
             foreach ($request->ques as $key => $value) {
                 if ($answer[$value] !== null) {
@@ -487,7 +488,7 @@ class KidsController extends Controller
                         foreach ($Usersessionsold->Anssessions as $ke => $val) {
                             if ($val->ques_id == $value) {
                                 $Anssessions->ans_old_id = $val->ans_id ?? $val->ans_old_id;
-                                $Anssessions->hex_old = $Usersessionsold->Session->hex;
+                                $Anssessions->hex_old = $val->ans_id == null ? $val->hex_old : $Usersessionsold->Session->hex;
 
                             }
                         }
@@ -496,6 +497,30 @@ class KidsController extends Controller
                     $Anssessions->save();
                 }
 
+            }
+            foreach ($apps as $key => $appp) {
+                $name = $request->name ?? []; // Initialize as empty array if not provided
+                $desc = $request->desc ?? []; // Initialize as empty array if not provided
+
+                // Check if the specific key exists in both name and desc arrays
+                if (isset($name[$appp->id]) || isset($desc[$appp->id])) {
+                    $Appsessions = Appsessions::where('session_id', $Usersessions->id)
+                                             ->where('app_id', $appp->id)
+                                             ->latest()
+                                             ->first();
+
+                    if ($Appsessions) {
+                        if (isset($name[$appp->id])) {
+                            $Appsessions->name = $name[$appp->id];
+                        }
+
+                        if (isset($desc[$appp->id])) {
+                            $Appsessions->desc = $desc[$appp->id];
+                        }
+
+                        $Appsessions->save();
+                    }
+                }
             }
 
         }

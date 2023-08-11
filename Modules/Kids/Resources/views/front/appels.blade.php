@@ -135,13 +135,19 @@
 
                                         @foreach ($num->Appale_Nums->Appale_Ques as $ke => $quest)
 
-                                        @if ($num->ans_old_id >= $quest->id)
-                                            <span class="stars" style="background-color: {{$num->hex_old}};" data-quest="{{$num->Appale_Nums->id}}" data-id="{{$quest->id}}">{{$ke + 1}}</span>
+                                        @if ($num->ans_old_id != null)
+                                            @if ($num->ans_old_id >= $quest->id)
+                                                <span class="stars" style="display: {{$num->ans_old_id > $quest->id ? 'none' : 'block'}} !important;background-color: {{$num->hex_old}};" data-quest="{{$num->Appale_Nums->id}}" data-id="{{$quest->id}}">{{$ke + 1}}</span>
 
+                                            @else
+                                                <span class="star" style="display: {{$num->ans_id > $quest->id ? 'none' : 'block'}} !important;background-color: {{$num->ans_id >= $quest->id ? $Usersessions->Session->hex : ''}};" data-quest="{{$num->Appale_Nums->id}}" data-id="{{$quest->id}}">{{$ke + 1}}</span>
+
+                                            @endif
                                         @else
-                                            <span class="star" style="background-color: {{$num->ans_id >= $quest->id ? $Usersessions->Session->hex : ''}};" data-quest="{{$num->Appale_Nums->id}}" data-id="{{$quest->id}}">{{$ke + 1}}</span>
+                                        <span class="star" style="background-color: {{$num->ans_id >= $quest->id ? $Usersessions->Session->hex : ''}};" data-quest="{{$num->Appale_Nums->id}}" data-id="{{$quest->id}}">{{$ke + 1}}</span>
 
                                         @endif
+
 
                                         @endforeach
 
@@ -174,12 +180,12 @@
                                 </div>
                                 <div class="" style="position:relative;">
                                 <label class="placeholder-teaxtarea">تقرير التقييم</label>
-                                <textarea name="" id="" class="textarea">
-
+                                <textarea name="desc[{{$val->Appale->id}}]" id="" class="textarea">
+                                    {{$val->desc}}
                                 </textarea>
                                 </div>
 
-                                <input type="text" plceholder="تقرير التقييم" name="" id="" class="
+                                <input type="text"  value="{{$val->name}}" plceholder="تقرير التقييم" name="name[{{$val->Appale->id}}]" id="" class="
                                 specialist" placeholder="اسم الأخصائي">
                             </div>
 
