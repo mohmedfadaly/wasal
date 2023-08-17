@@ -161,8 +161,8 @@
                                                     <label>الجنس</label>
                                                     <select class="form-control" name="kind">
                                                         <option value="">اختر الجنس</option>
-                                                        <option value="1">ذكر</option>
-                                                        <option value="0">انثي</option>
+                                                        <option value="0">ذكر</option>
+                                                        <option value="1">انثي</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group col-6">
