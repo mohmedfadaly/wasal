@@ -177,7 +177,6 @@ class KidsController extends Controller
             Alert::warning('not found ', ' يجب التحقق');
             return back();
         }
-
     }
 
     # show Patient Data
@@ -191,7 +190,6 @@ class KidsController extends Controller
             Alert::warning('not found ', ' يجب التحقق');
             return back();
         }
-
     }
 
 
@@ -309,73 +307,73 @@ class KidsController extends Controller
     {
         $cities = City::all();
         $countries = Country::all();
-//        dd($cities,$countries);
-//        if($request->name != null || $request->num != null || $request->date != null || $request->kind != null ||
-//            $request->country_id != null || $request->city_id != null ){
-//            $filterdKids = collect();
-//            if ($request->name != null) {
-//                $kids = Kid::where('name', 'like', '%' . $request->name . '%')->get();
-//                $filterdKids =$filterdKids->union($kids);
-//            }
-//            else if ($request->num != null) {
-//                $kids = Kid::where('num',$request->num)->get();
-//                $filterdKids =$filterdKids->union($kids);
-//            }
-//
-//            else if ($request->date != null) {
-//                $kids = Kid::where('date',$request->date)->get();
-//                $filterdKids =$filterdKids->union($kids);
-//            }
-//
-//            else if ($request->kind != null) {
-//                $kids = Kid::where('kind',$request->kind)->get();
-//                $filterdKids =$filterdKids->union($kids);
-//            }
-//
-//            else if ($request->country_id != null) {
-//                $kids = Kid::where('country_id',$request->country_id)->get();
-//                $filterdKids =$filterdKids->union($kids);
-//            }
-//
-//            else if ($request->city_id != null) {
-//                $kids = Kid::where('city_id',$request->city_id)->get();
-//                $filterdKids =$filterdKids->union($kids);
-//            }
-//            $kids= $filterdKids;
-//        }else{
-//        $kids = Kid::all();
-//        }
-    if ($request->hasAny(['name', 'num', 'date', 'kind', 'country_id', 'city_id'])) {
-        $kids = Kid::where(function ($query) use ($request) {
-            if ($request->name != null) {
-                $query->where('name', 'like', '%' . $request->name . '%');
-            }
+        //        dd($cities,$countries);
+        //        if($request->name != null || $request->num != null || $request->date != null || $request->kind != null ||
+        //            $request->country_id != null || $request->city_id != null ){
+        //            $filterdKids = collect();
+        //            if ($request->name != null) {
+        //                $kids = Kid::where('name', 'like', '%' . $request->name . '%')->get();
+        //                $filterdKids =$filterdKids->union($kids);
+        //            }
+        //            else if ($request->num != null) {
+        //                $kids = Kid::where('num',$request->num)->get();
+        //                $filterdKids =$filterdKids->union($kids);
+        //            }
+        //
+        //            else if ($request->date != null) {
+        //                $kids = Kid::where('date',$request->date)->get();
+        //                $filterdKids =$filterdKids->union($kids);
+        //            }
+        //
+        //            else if ($request->kind != null) {
+        //                $kids = Kid::where('kind',$request->kind)->get();
+        //                $filterdKids =$filterdKids->union($kids);
+        //            }
+        //
+        //            else if ($request->country_id != null) {
+        //                $kids = Kid::where('country_id',$request->country_id)->get();
+        //                $filterdKids =$filterdKids->union($kids);
+        //            }
+        //
+        //            else if ($request->city_id != null) {
+        //                $kids = Kid::where('city_id',$request->city_id)->get();
+        //                $filterdKids =$filterdKids->union($kids);
+        //            }
+        //            $kids= $filterdKids;
+        //        }else{
+        //        $kids = Kid::all();
+        //        }
+        if ($request->hasAny(['name', 'num', 'date', 'kind', 'country_id', 'city_id'])) {
+            $kids = Kid::where(function ($query) use ($request) {
+                if ($request->name != null) {
+                    $query->where('name', 'like', '%' . $request->name . '%');
+                }
 
-            if ($request->num != null) {
-                $query->where('num', $request->num);
-            }
+                if ($request->num != null) {
+                    $query->where('num', $request->num);
+                }
 
-            if ($request->date != null) {
-                $query->where('date', $request->date);
-            }
+                if ($request->date != null) {
+                    $query->where('date', $request->date);
+                }
 
-            if ($request->kind != null) {
-                $query->where('kind', $request->kind);
-            }
+                if ($request->kind != null) {
+                    $query->where('kind', $request->kind);
+                }
 
-            if ($request->country_id != null) {
-                $query->where('country_id', $request->country_id);
-            }
+                if ($request->country_id != null) {
+                    $query->where('country_id', $request->country_id);
+                }
 
-            if ($request->city_id != null) {
-                $query->where('city_id', $request->city_id);
-            }
-        })->get();
-    } else {
-        $kids = Kid::all();
-    }
+                if ($request->city_id != null) {
+                    $query->where('city_id', $request->city_id);
+                }
+            })->get();
+        } else {
+            $kids = Kid::all();
+        }
 
-          return view('kids::front.patiant_file', compact('kids', 'cities', 'countries'));
+        return view('kids::front.patiant_file', compact('kids', 'cities', 'countries'));
     }
 
     public function showKid(Request $request, $id)
@@ -415,7 +413,6 @@ class KidsController extends Controller
             }
         } else {
             $SessionK = SessionK::where('id', '1')->first();
-
         }
         $kid = Kid::find($id);
         $apps = Appale::with('Appale_Nums', 'Appale_Nums.Appale_Ques')->get();
@@ -424,7 +421,6 @@ class KidsController extends Controller
 
 
         if ($Usersessions) {
-
         } else {
             $Usersessionsold = Usersessions::with('Appsessions.Appale', 'Appsessions.Anssessions', 'Anssessions')->where('session_id', $SessionK->id - 1)->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->latest()->first();
 
@@ -450,7 +446,6 @@ class KidsController extends Controller
                             if ($val->ques_id == $quse->id) {
                                 $Anssessions->hex_old = $val->ans_id == null ? $val->hex_old : $Usersessionsold->Session->hex;
                                 $Anssessions->ans_old_id = $val->ans_id ?? $val->ans_old_id;
-
                             }
                         }
                     }
@@ -459,8 +454,6 @@ class KidsController extends Controller
                 }
             }
             $Usersessions = Usersessions::with('Appsessions.Appale', 'Appsessions.Anssessions.Appale_Nums.Appale_Ques')->where('id', $Usersessions->id)->latest()->first();
-
-
         }
         $sessions = Usersessions::with('Session')->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->get();
 
@@ -489,14 +482,12 @@ class KidsController extends Controller
                             if ($val->ques_id == $value) {
                                 $Anssessions->ans_old_id = $val->ans_id ?? $val->ans_old_id;
                                 $Anssessions->hex_old = $val->ans_id == null ? $val->hex_old : $Usersessionsold->Session->hex;
-
                             }
                         }
                     }
 
                     $Anssessions->save();
                 }
-
             }
             foreach ($apps as $key => $appp) {
                 $name = $request->name ?? []; // Initialize as empty array if not provided
@@ -505,9 +496,9 @@ class KidsController extends Controller
                 // Check if the specific key exists in both name and desc arrays
                 if (isset($name[$appp->id]) || isset($desc[$appp->id])) {
                     $Appsessions = Appsessions::where('session_id', $Usersessions->id)
-                                             ->where('app_id', $appp->id)
-                                             ->latest()
-                                             ->first();
+                        ->where('app_id', $appp->id)
+                        ->latest()
+                        ->first();
 
                     if ($Appsessions) {
                         if (isset($name[$appp->id])) {
@@ -522,7 +513,6 @@ class KidsController extends Controller
                     }
                 }
             }
-
         }
 
         if (isset($Usersessionsnew)) {
@@ -537,9 +527,7 @@ class KidsController extends Controller
                     }
                     $Anssessionsnew->save();
                 }
-
             }
-
         }
         Alert::success('عملية ناجحة', 'تم الإدخال');
         return back();
@@ -558,9 +546,28 @@ class KidsController extends Controller
     public function showVerticalDraw(Request $request, $id)
     {
         $sessions = Usersessions::where('kid_id', $id)->get();
-//        dd($sessions);
-        return view('kids::front.vertical_drawing', compact('sessions'));
+        $session_Id = $request->input("session_Id");
+        $count_session = Usersessions::with('Appsessions.Appale', 'Appsessions.Anssessions')->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->count();
+
+
+        if ($session_Id) {
+
+            $SessionK = SessionK::where('id', $session_Id)->first();
+            if (!$SessionK) {
+                Alert::error(' عملية فاشلة', ' لقد وصلت للحد النهائي');
+                return back();
+            }
+        } else {
+            $SessionK = SessionK::where('id', '1')->first();
+        }
+        $kid = Kid::find($id);
+        $apps = Appale::with('Appale_Nums', 'Appale_Nums.Appale_Ques')->get();
+
+        $Usersessions = Usersessions::with('Appsessions.Appale', 'Appsessions.Anssessions')->where('session_id', $SessionK->id)->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->latest()->first();
+
+
+        $sessions = Usersessions::with('Session')->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->get();
+
+        return view('kids::front.vertical_drawing', compact('kid', 'apps', 'sessions', 'Usersessions', 'count_session'));
     }
-
-
 }

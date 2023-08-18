@@ -43,7 +43,7 @@
         <div class="row align-items-center ">
             <div class="col-md-6 ">
                 <div class="form-title mt-4 mb-4 ">
-                    <img src="images/Business, Chart.png" />
+                    <img src="{{asset('dist/front/assets')}}/images/Business, Chart.png" />
                     <h3> الرسم العمودي للتقييم </h3>
                 </div>
             </div>
@@ -51,15 +51,14 @@
                 <div class="tab-form">
 
                     <div class="dates row">
-                        @foreach($sessions as $session)
-                        <div class="date col-lg-2 col-md-3 col-6" style="background-color:{{$session->Session->hex}};">
-                            <a><h9> تقييم بتاريخ {{date('Y/m/d', strtotime($session->created_at))}} </h9>
-                            </a>
-{{--                            <div class="close">--}}
-{{--                                <i class="fa-solid fa-xmark"></i>--}}
-{{--                            </div>--}}
-                        </div>
+                        @foreach ($sessions as $key =>  $val)
+                            <div  class=" date  col-lg-2 col-md-3 col-6" style="background-color: {{$val->Session->hex}};">
+
+
+                                <h9 class="sessionsdate" data-id="{{$val->Session->id}}"  style="cursor: pointer;font-size: 15px;"><span> تقييم بتاريخ</span> {{date('Y/m/d', strtotime($val->created_at))}} </h9>
+                            </div>
                         @endforeach
+
                     </div>
 
                     <div class="scroller-tab">
@@ -67,102 +66,24 @@
                         <div class="left"><i class="fa-solid fa-arrow-left"></i></div>
                         <div class="right"><i class="fa-solid fa-arrow-right"></i></div>
                         <ul class="nav nav-tabs ablis-tabs" role="tablist">
+                            @foreach ($Usersessions->Appsessions as $key => $val)
+                                <li class="nav-item">
+                                    <a class="nav-link {{$val->Appale->name == 'A' ? 'active' : ''}}" data-bs-toggle="tab" href="#{{$val->Appale->name}}">{{$val->Appale->name}}</a>
+                                </li>
+                            @endforeach
 
 
-                            <li class="nav-item">
-                                <a class="nav-link active" data-bs-toggle="tab" href="#A">A</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link" data-bs-toggle="tab" href="#A" >B</a>
-                            </li>
-
-                            <li class="nav-item ">
-                                <a class="nav-link" data-bs-toggle="tab"href="#A" >C</a>
-                            </li>
-
-
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#B">D</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#E">E</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#F">F</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#G">G</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#H">H</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#I">I</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#J">J</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#K">K</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#L">L</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#M">M</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#N">N</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#O">O</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#P">P</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#Q">Q</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#R">R</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#S">S</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#T">T</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#V">V</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#W">W</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#X">X</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#Y">Y</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-bs-toggle="tab" href="#Z">Z</a>
-                            </li>
                         </ul>
                     </div>
                     <div class="tab-content mt-5">
-{{--                        @foreach ($sessions as $session)--}}
-{{--                            @foreach ($session->Appsessions as $name)--}}
-{{--                                <h3>--}}
-{{--                                    {{$name->name}}B--}}
-{{--                                </h3>--}}
-{{--                            @endforeach--}}
-{{--                        @endforeach--}}
-                        <div id="A" class="container tab-pane active tab-pane-ablis">
+                        @foreach ($Usersessions->Appsessions as $key => $val)
+
+                        <div id="{{$val->Appale->name}}" class="container tab-pane tab-pane-ablis {{$val->Appale->name == 'A' ? 'active' : 'fade'}}">
                             <br />
                             <div class="letter-container">
                                 <div class="B letterHover">
                                     <div class="letter-title text-center">
-                                        <h3>(A) التعاون وفعالية المعزز</h3>
+                                        <h3>({{$val->Appale->name}}) التعاون وفعالية المعزز</h3>
                                     </div>
                                     <div class="letter-graph d-flex mt-5">
                                         <div class="letter" style="flex-basis: 12%; text-align: center;">
@@ -170,114 +91,6 @@
                                                 <p>A1</p>
                                                 <div class="letter-question">
                                                     <p>أخد المعزز حينما بعرض عليه</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element" style="position: relative;">
-                                                <p>A2</p>
-                                                <div class="letter-question">
-                                                    <p>أخد المعزز من ضمن اختيارين</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A3</p>
-                                                <div class="letter-question">
-                                                    <p>النظر لشيء غير معزز</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A4</p>
-                                                <div class="letter-question">
-                                                    <p>أخد شيء مألوف حينما يقدم إليه</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A5</p>
-                                                <div class="letter-question">
-                                                    <p>الإقتراب للحصول على معزز عندما تتطلب المهمة</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A6</p>
-                                                <div class="letter-question">
-                                                    <p>الإستجابة للتعليمات للحصول على المعزز من المدرب</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A7</p>
-                                                <div class="letter-question">
-                                                    <p>الإستجابة للعديد من المدربين</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A8</p>
-                                                <div class="letter-question">
-                                                    <p>الإنتظار بدون مثير لمسى</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A9</p>
-                                                <div class="letter-question">
-                                                    <p>ينظر للمعلم للحصول على تعليمات</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A10</p>
-                                                <div class="letter-question">
-                                                    <p>فحص الأشياء للتعليمات قبل الإستجابة</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A11</p>
-                                                <div class="letter-question">
-                                                    <p>يستجيب بسرعة عند إعطاء التعليمات</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A12</p>
-                                                <div class="letter-question">
-                                                    <p>يستجيب التعزيز غير المادي</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A13</p>
-                                                <div class="letter-question">
-                                                    <p>تعزيز مادي غير منتظم</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A14</p>
-                                                <div class="letter-question">
-                                                    <p>تفاعل المعلم كتعزيز</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A15</p>
-                                                <div class="letter-question">
-                                                    <p>يلاحظ تغييرات تعبيرات وجه وصوت المعلم</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A16</p>
-                                                <div class="letter-question">
-                                                    <p>الإستجابة للمعززات الإجتماعية</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A17</p>
-                                                <div class="letter-question">
-                                                    <p>الإنتظار بصورة مناسبة في حالة تأخر تقديم المعزز</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A18</p>
-                                                <div class="letter-question">
-                                                    <p>السعي للحصول على الإستحسان عند إستكمال المهمة</p>
-                                                </div>
-                                            </div>
-                                            <div class="question-element">
-                                                <p>A19</p>
-                                                <div class="letter-question">
-                                                    <p>الإنهاء من المهمة يقوم بدور المعزز</p>
                                                 </div>
                                             </div>
 
@@ -1460,163 +1273,9 @@
                             </div>
 
                         </div>
+                        @endforeach
 
-                        <div id="B" class="container tab-pane tab-pane-ablis fade">
-                            <br />
-                            <div class="letter-container">
-                                <div class="A">
-                                    <div class="letter-title text-center">
-                                        <h3>(A) التعاون وفعالية المعزز</h3>
-                                    </div>
-                                    <div class="letter-graph">
-                                        <div class="letter">
-                                            <p>D1</p>
-                                            <p>D2</p>
-                                            <p>D3</p>
-                                            <p>D4</p>
-                                            <p>D5</p>
-                                            <p>D6</p>
-                                            <p>D7</p>
-                                            <p>D8</p>
-                                            <p>D9</p>
-                                            <p>D10</p>
-                                            <p>D11</p>
-                                            <p>D12</p>
-                                        </div>
-                                        <div class="graph">
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="B">
-                                    <div class="letter-title text-center">
-                                        <h3>(B) الأداء البصري</h3>
-                                    </div>
-                                    <div class="letter-graph">
-                                        <div cEass="letter">
-                                            <p>E1</p>
-                                            <p>E2</p>
-                                            <p>E3</p>
-                                            <p>E4</p>
-                                            <p>E5</p>
-                                            <p>E6</p>
-                                            <p>E7</p>
-                                            <p>E8</p>
-                                            <p>E9</p>
-                                            <p>E10</p>
-                                            <p>E11</p>
-                                            <p>E12</p>
-                                        </div>
-                                        <div class="graph">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="C">
-                                    <div class="letter-title text-center">
-                                        <h3> (C) اللغة الإستقبالية</h3>
-                                    </div>
-                                    <div class="letter-graph">
-                                        <div class="letter">
-                                            <p>F1</p>
-                                            <p>F2</p>
-                                            <p>F3</p>
-                                            <p>F4</p>
-                                            <p>F5</p>
-                                            <p>F6</p>
-                                            <p>F7</p>
-                                            <p>F8</p>
-                                            <p>F9</p>
-                                            <p>F10</p>
-                                            <p>F11</p>
-                                            <p>F12</p>
-                                        </div>
-                                        <div class="graph">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div id="C" class="container tab-pane tab-pane-ablis fade">
-                            <br />
-                            <div class="letter-container">
-                                <div class="A">
-                                    <div class="letter-title text-center">
-                                        <h3>(A) التعاون وفعالية المعزز</h3>
-                                    </div>
-                                    <div class="letter-graph">
-                                        <div class="letter">
-                                            <p>D1</p>
-                                            <p>D2</p>
-                                            <p>D3</p>
-                                            <p>D4</p>
-                                            <p>D5</p>
-                                            <p>D6</p>
-                                            <p>D7</p>
-                                            <p>D8</p>
-                                            <p>D9</p>
-                                            <p>D10</p>
-                                            <p>D11</p>
-                                            <p>D12</p>
-                                        </div>
-                                        <div class="graph">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="B">
-                                    <div class="letter-title text-center">
-                                        <h3>(B) الأداء البصري</h3>
-                                    </div>
-                                    <div class="letter-graph">
-                                        <div cEass="letter">
-                                            <p>E1</p>
-                                            <p>E2</p>
-                                            <p>E3</p>
-                                            <p>E4</p>
-                                            <p>E5</p>
-                                            <p>E6</p>
-                                            <p>E7</p>
-                                            <p>E8</p>
-                                            <p>E9</p>
-                                            <p>E10</p>
-                                            <p>E11</p>
-                                            <p>E12</p>
-                                        </div>
-                                        <div class="graph">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="C">
-                                    <div class="letter-title text-center">
-                                        <h3> (C) اللغة الإستقبالية</h3>
-                                    </div>
-                                    <div class="letter-graph">
-                                        <div class="letter">
-                                            <p>F1</p>
-                                            <p>F2</p>
-                                            <p>F3</p>
-                                            <p>F4</p>
-                                            <p>F5</p>
-                                            <p>F6</p>
-                                            <p>F7</p>
-                                            <p>F8</p>
-                                            <p>F9</p>
-                                            <p>F10</p>
-                                            <p>F11</p>
-                                            <p>F12</p>
-                                        </div>
-                                        <div class="graph">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
 
                 </div>
