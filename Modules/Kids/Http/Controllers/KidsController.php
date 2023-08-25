@@ -545,29 +545,27 @@ class KidsController extends Controller
 
     public function showVerticalDraw(Request $request, $id)
     {
-        $sessions = Usersessions::where('kid_id', $id)->get();
         $session_Id = $request->input("session_Id");
+        $app_Id = $request->input("app_Id");
+
+        $sessions = Usersessions::where('kid_id', $id)->get();
         $count_session = Usersessions::with('Appsessions.Appale', 'Appsessions.Anssessions')->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->count();
 
+        $sessions = Usersessions::with('Session')->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->get();
+        $sessionIds = $sessions->pluck('id')->toArray();
+        if ($app_Id) {
 
-        if ($session_Id) {
+            $nums = Appsessions::where('app_id', $app_Id)->whereIn('session_id', $sessionIds)->get();
+            $letr = Appale::where('id', $app_Id)->with('Appale_Nums', 'Appale_Nums.Appale_Ques')->first();
 
-            $SessionK = SessionK::where('id', $session_Id)->first();
-            if (!$SessionK) {
-                Alert::error(' عملية فاشلة', ' لقد وصلت للحد النهائي');
-                return back();
-            }
         } else {
-            $SessionK = SessionK::where('id', '1')->first();
+            $letr = Appale::where('id', '1')->with('Appale_Nums', 'Appale_Nums.Appale_Ques')->first();
+            $nums = Appsessions::where('app_id', '1')->whereIn('session_id', $sessionIds)->get();
         }
         $kid = Kid::find($id);
         $apps = Appale::with('Appale_Nums', 'Appale_Nums.Appale_Ques')->get();
 
-        $Usersessions = Usersessions::with('Appsessions.Appale', 'Appsessions.Anssessions')->where('session_id', $SessionK->id)->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->latest()->first();
 
-
-        $sessions = Usersessions::with('Session')->where('doctor_id', auth()->guard('customer')->user()->id)->where('kid_id', $id)->get();
-
-        return view('kids::front.vertical_drawing', compact('kid', 'apps', 'sessions', 'Usersessions', 'count_session'));
+        return view('kids::front.vertical_drawing', compact('nums','letr','kid', 'apps', 'sessions', 'count_session'));
     }
 }
